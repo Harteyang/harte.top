@@ -19,7 +19,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+  font-size: 100%;
+  margin-bottom: 1em;
+}
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
@@ -140,10 +142,11 @@ a:active   { color: #0181eb; }
 .post pre {
   font-size: 15px;
   border: 1px solid #ddd;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
+  background-color: black;
   padding: 0 .4em;
   overflow: auto;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .post ul, .post ol {
@@ -156,9 +159,9 @@ a:active   { color: #0181eb; }
 }
 
 .post pre code {
-  color: #000;
+  color: green;
   /* background-color: #eef; */
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   padding: 0 .2em;
   border: none;
 }
