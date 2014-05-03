@@ -14,8 +14,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+  font: 13.9px Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
@@ -25,9 +24,10 @@ h1, h2, h3, h4, h5, h6 {
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
+a         { color: #1863a1; }
+a:visited { color: #1863A1; }
+a:hover   { color: #0181eb; }
+a:active   { color: #0181eb; }
 
 /*****************************************************************************/
 /*
@@ -87,10 +87,11 @@ a:visited { color: #a0a; }
 }
 
 .header a.extra:hover {
-  color: #000;
+  color: #a00;
 }
 
 .meta {
+  text-align: center;
   color: #aaa;
 }
 
@@ -127,12 +128,22 @@ a:visited { color: #a0a; }
 /*
 /*****************************************************************************/
 
+#pagetitle {
+  text-align: center;
+}
+
+#pagetitle h2 {
+  font-size: 22px;
+}
+
 /* standard */
 .post pre {
+  font-size: 15px;
   border: 1px solid #ddd;
-  background-color: #eef;
+  background-color: #f8f8f8;
   padding: 0 .4em;
   overflow: auto;
+  margin-bottom: 2em;
 }
 
 .post ul, .post ol {
@@ -140,12 +151,15 @@ a:visited { color: #a0a; }
 }
 
 .post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
+  color: blue;
   padding: 0 .2em;
 }
 
 .post pre code {
+  color: #000;
+  /* background-color: #eef; */
+  background-color: #f8f8f8;
+  padding: 0 .2em;
   border: none;
 }
 
