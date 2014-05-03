@@ -3,7 +3,7 @@ layout: post
 title: "4.5号 累嗝屁的一天"
 date: 2014-04-06 22:44
 comments: true
-categories: 生活
+categories: "生活"
 ---
 
 <!-- more -->

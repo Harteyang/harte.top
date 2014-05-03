@@ -1,3 +1,4 @@
 name: Blog · Tanky Woo
 markdown: redcarpet
 pygments: true
+exclude: ["fabfile.py*", "*.bak"]
