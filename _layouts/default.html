@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
-        <meta name="description" content="Tanky Woo's Blog, focus on Python, Linux, Gentoo, Mac OS, Vim, Open Source and so on."/>
+        <meta name="description" content="{{ site.description }}"/>
         <meta name="viewport" content="width=device-width">
         <link href="/favicon.png" rel="icon">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -24,6 +25,7 @@
             <a class="extra" href="http://wiki.tankywoo.com/">Wiki</a>
             <a class="extra" href="https://github.com/tankywoo">Github</a>
             <a class="extra" href="/about.html">About</a>
+            <a class="extra" href="/feed.xml">RSS</a>
           </div>
 
           {{ content }}
