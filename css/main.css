@@ -31,6 +31,14 @@ a:visited { color: #1863A1; }
 a:hover   { color: #0181eb; }
 a:active   { color: #0181eb; }
 
+blockquote {
+  font: 14px/22px normal helvetica, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  border-left: 2px dashed #ccc;
+} 
+
 /*****************************************************************************/
 /*
 /* Home
@@ -147,6 +155,7 @@ a:active   { color: #0181eb; }
   padding: 0 .4em;
   overflow: auto;
   margin-bottom: 1em;
+  padding: 5px 0 5px 10px;
 }
 
 .post ul, .post ol {
