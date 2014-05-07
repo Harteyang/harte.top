@@ -27,6 +27,7 @@ h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
 a         { color: #1863a1; }
+a:link    { text-decoration: none; }
 a:visited { color: #1863A1; }
 a:hover   { color: #0181eb; }
 a:active   { color: #0181eb; }
