@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
+p { margin: 0 0 1em 0; }
 
 a         { color: #1863a1; }
 a:link    { text-decoration: none; }
@@ -149,18 +149,18 @@ blockquote {
 
 /* standard */
 .post pre {
-  font-size: 15px;
-  border: 1px solid #ddd;
-  /* background-color: #f8f8f8; */
-  background-color: black;
+  font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
+  font-size: 14px;
+  background-color: #f8f8f8;
   padding: 0 .4em;
   overflow: auto;
-  margin-bottom: 1em;
+  margin: 1em 0;
   padding: 5px 0 5px 10px;
 }
 
 .post ul, .post ol {
   margin-left: 1.35em;
+  margin-bottom: 1em;
 }
 
 .post code {
@@ -169,7 +169,8 @@ blockquote {
 }
 
 .post pre code {
-  color: green;
+  font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
+  color: black;
   /* background-color: #eef; */
   /* background-color: #f8f8f8; */
   padding: 0 .2em;
@@ -185,4 +186,25 @@ blockquote {
 
 .post pre.terminal code {
   background-color: #333;
+}
+
+.post h1 {
+  font-size: 150%;
+  margin-bottom: 0.66em;
+}
+
+.post h2 {
+  font-size: 140%;
+  margin-bottom: 0.6em;
+}
+.post h3 {
+  font-size: 125%;
+  margin-bottom: 0.8em;
+}
+.post h4 {
+  font-size: 110%;
+  margin-bottom: 0.9em;
+}
+.post h5 {
+  font-size: 100%;
 }
