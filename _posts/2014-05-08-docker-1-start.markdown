@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Docker 1 -- Start"
-date: 2014-05-04 15:30
+title: "Docker 1 -- 开始"
+date: 2014-05-08 15:30
 categories: Docker
 ---
 
@@ -39,7 +39,19 @@ Runtimes (like java runtimes), Databases (like mySql, Oracle), Web Servers (tomc
 A layer on top on PAAS
 Applications like email (Gmail, Yahoo mail etc), Social Networking sites (Facebook etc)
 
+正好在微博上看到 @[老刀IBM](http://weibo.com/1586108233/B3bGwpDKJ) 分享的一个三者关系图：
+
+![IAAS vs PAAS vs SaaS](http://tankywoo-wb.b0.upaiyun.com/iaas_paas_saas.jpg!small)
+
 `LXC` -- LinuX Container
+
+借用[网上](http://segmentfault.com/a/1190000000366923)的解释:
+
+> Docker 提供了一个可以运行你的应用程序的封套(envelope)，或者说容器。它原本是 dotCloud 启动的一个业余项目，并在前些时候开源了。它吸引了大量的关注和讨论，导致 dotCloud 把它重命名到 Docker Inc。它最初是用 Go 语言编写的，它就相当于是加在 LXC（LinuX Containers，linux 容器）上的管道，允许开发者在更高层次的概念上工作。
+> 
+> Docker 扩展了 Linux 容器（Linux Containers），或着说 LXC，通过一个高层次的 API 为进程单独提供了一个轻量级的虚拟环境。Docker 利用了 LXC， cgroups 和 Linux 自己的内核。和传统的虚拟机不同的是，一个 Docker 容器并不包含一个单独的操作系统，而是基于已有的基础设施中操作系统提供的功能来运行的。这里有一个 Stackoverflow 的答案，里面非常详细清晰地描述了所有 Docker 不同于纯粹的 LXC 的功能特性
+> 
+> Docker 会像一个可移植的容器引擎那样工作。它把应用程序及所有程序的依赖环境打包到一个虚拟容器中，这个虚拟容器可以运行在任何一种 Linux 服务器上。这大大地提高了程序运行的灵活性和可移植性，无论需不需要许可、是在公共云还是私密云、是不是裸机环境等等。
 
 
 更多关于Docker，看看官方的[Learn More](https://www.docker.io/learn_more/)
@@ -64,9 +76,7 @@ Applications like email (Gmail, Yahoo mail etc), Social Networking sites (Facebo
 
 ### Getting Started ###
 
-> There are actually two programs: The Docker daemon, which is a server process and which manages all the containers, and the Docker client, which acts as a remote control on the daemon. On most systems, like in this emulator, both execute on the same host.
-
-Docker包含两个程序，一个服务端，一个客户端，服务端用来管理所有容器，#TODO#
+Docker包含两个程序，一个服务端，一个客户端，服务端用来管理所有容器，客户端用来控制服务端守护进程。在大部分系统，服务端和守护端都运行在同一台机器上。
 
 查看docker 版本:
 
@@ -80,7 +90,7 @@ Docker包含两个程序，一个服务端，一个客户端，服务端用来�
 
 线上的显示比较简单，且版本较老(0.5.3)，本地(Ubuntu12.04)下安装的，版本较新(0.10.0)。可以看到这里有 `Client version`  和 `Server version`。
 
-	root@wutq-docker:~# docker version
+	root@tankywoo-docker:~# docker version
 	Client version: 0.10.0
 	Client API version: 1.10
 	Go version (client): go1.2.1
@@ -92,7 +102,9 @@ Docker包含两个程序，一个服务端，一个客户端，服务端用来�
 
 	Last stable version: 0.10.0
 
-思考下这里为何会显示 `Git commit` 和 `Go version` ? TODO
+思考下这里为何会显示 `Git commit` 和 `Go version` ? 
+
+TODO
 
 ### Searching for images ###
 
@@ -153,10 +165,6 @@ Docker包含两个程序，一个服务端，一个客户端，服务端用来�
 > You can think about containers as a process in a box. The box contains everything the process might need, so it has the filesystem, system libraries, shell and such, but by default none of it is started or run.
 > You 'start' a container by running a process in it. This process is the only process run, so when it completes the container is fully stopped.
 
-TODO
-
-The command `docker run` takes a minimum of two arguments. An image name, and the command you want to execute within that image.
-
 使用`docker run`来在容器中执行命令，它最少有两个参数，一个是容器名，一个是要执行的操作。
 
 	you@tutorial:~$ docker run learn/tutorial echo 'hello world'
@@ -208,7 +216,8 @@ The command `docker run` takes a minimum of two arguments. An image name, and th
 
 不需要写出全部的id, 一般只需要前三位或前四位就行
 
-	# TODO learn/ping is a new repo
+这里的 learn/ping 就是commit新建的image name:
+
 	you@tutorial:~$ docker commit 698 learn/ping
 	effb66b31edb
 
@@ -310,11 +319,15 @@ Docker的安装很简单，直接阅读官方的[安装文档](https://www.docke
 
 官方的Docker开发都是在Ubuntu下进行的，所以也推荐使用Ubuntu。
 
+另外Docker要求的内核最低是`3.8`，所以最好高于这个版本，安装完可以用官网的一个脚本检测下看内核配置是否都开启了:
+
+<https://raw.githubusercontent.com/dotcloud/docker/master/contrib/check-config.sh>
+
+之前在Gentoo 3.7内核下安装，然后Docker就使用不了，[这是](https://github.com/dotcloud/docker/issues/5590)他们的解释
+
 直接执行进入ubuntu的交互模式，会查看本地是否有镜像，如果没有会自动下载。
 
-** TODO ** : 这个下载会把ubuntu相关的都下载下来 
-
-	root@wutq-docker:~# docker run -i -t ubuntu /bin/bash
+	root@tankywoo-docker:~# docker run -i -t ubuntu /bin/bash
 	Unable to find image 'ubuntu' locally
 	Pulling repository ubuntu
 	316b678ddf48: Download complete
@@ -345,7 +358,7 @@ Docker的安装很简单，直接阅读官方的[安装文档](https://www.docke
 
 查看本地的镜像:
 
-	root@wutq-docker:~# docker images
+	root@tankywoo-docker:~# docker images
 	REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 	ubuntu              13.10               5e019ab7bf6d        11 days ago         180 MB
 	ubuntu              saucy               5e019ab7bf6d        11 days ago         180 MB
@@ -370,7 +383,7 @@ Docker的安装很简单，直接阅读官方的[安装文档](https://www.docke
 
 查看相关的信息:
 
-	root@wutq-docker:~# docker info
+	root@tankywoo-docker:~# docker info
 	Containers: 1
 	Images: 23
 	Storage Driver: aufs
