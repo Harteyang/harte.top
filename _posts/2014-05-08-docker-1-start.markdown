@@ -104,7 +104,9 @@ Docker包含两个程序，一个服务端，一个客户端，服务端用来�
 
 思考下这里为何会显示 `Git commit` 和 `Go version` ? 
 
-TODO
+这里的Git commit是0.10.0这个release的commit id: [docker releases](_posts/2014-05-08-docker-4-summary.markdown)
+
+因为docker是Go写的，这里应该是开发Docker使用的Go版本 ** TODO **
 
 ### Searching for images ###
 

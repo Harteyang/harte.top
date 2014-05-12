@@ -5,7 +5,7 @@ date: 2014-05-08 15:30
 categories: Docker
 ---
 
-查看docker的子命令，直接敲`docker`就可以了:
+查看docker的子命令，直接敲`docker`或完整的`docker help`就可以了:
 
 	root@tankywoo-docker:~# docker                                         [1/1617]
 	Usage: docker [OPTIONS] COMMAND [arg...]
@@ -50,6 +50,8 @@ categories: Docker
 查看docker支持的选项:
 
 	docker --help
+
+## 常用命令 ##
 
 总结一下常用命令:
 
@@ -409,12 +411,118 @@ docker 的 containers之间共享目录是通过 `volume` 。
 	May  5 17:44:11 tpl-ubuntu12-04 kernel: [99732.566226] unregister_netdevice: waiting for lo to become free. Usage count = 3
 	May  5 17:44:21 tpl-ubuntu12-04 kernel: [99742.785141] unregister_netdevice: waiting for lo to become free. Usage count = 3
 
+## 什么是Layer ##
+
+Docker images are built up in layers. So, for instance, if you need to run WordPress, you would build the Ubuntu layer, add a layer for Apache2 web server, add a PHP layer and then a layer for the WordPress files. Lower layers can be re-used. We might take the PHP layer and layer on Drupal instead of WordPress, or update our WordPress layer with a newer version or Wordpress.
+
+Because we can re-use layers, we can make new docker images very cheaply. We can create a new docker image by changing just a single line of one file and we do not have to rebuild the whole stack.
+
+The beauty of docker images being “just files” means that the difference between two docker images is just a diff of the files they contain.
+
+[Hykes Explains Docker](http://www.activestate.com/blog/2013/06/solomon-hykes-explains-docker)
+
+## 概念上的问题 ##
+
+[The Docker Guidebook](http://kencochrane.net/blog/2013/08/the-docker-guidebook/) 的简单对比:
+
+`Image` : An image is a read only layer used to build a container. They do not change.
+
+`Container` : Is basically a self contained runtime environment that is built using one or more images. You can commit your changes to a container and create an image.
+
+`index / registry` : These are public or private servers where people can upload their repositories so they can easily share what they made.
+
+`Repository` : A repository is a group of images located in the docker registry. There are two types of repositories, Top level and user repositories. Top level repositories don't have a '/' in the name and they are usually reserved for base images. These Top level repositories is what most people build their repositories on top of. They are controlled by the maintainers of Docker. User repositories are repositories that anyone can upload into the registry and share with other people.
+
+说直接点，Image和Container最容易理解和对比，它俩的关系就像类与类的实例这两的关系一样。
+
+其实Index和Registry也有区别，主要就是Index存储的是用户信息、images的checksum；而Registry存储的是images。具体见官方文档[Registry & Index Spec](http://docs.docker.io/reference/api/registry_index_spec/)。
+
+另外，关于Repository与Registry和Image又是什么关系?
+
+	root@tankywoo-docker:~/docker-registry-master# docker images
+	REPOSITORY              TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+	10.2.15.190/tankywoo        latest              276cc641e40e        4 days ago          388.3 MB
+	10.2.15.190:5000/tankywoo   latest              276cc641e40e        4 days ago          388.3 MB
+	ubuntu                  newtest             276cc641e40e        4 days ago          388.3 MB
+	ubuntu                  test                fe65a2781dae        4 days ago          209.6 MB
+	ubuntu                  13.10               5e019ab7bf6d        2 weeks ago         180 MB
+	ubuntu                  saucy               5e019ab7bf6d        2 weeks ago         180 MB
+	ubuntu                  12.04               74fe38d11401        2 weeks ago         209.6 MB
+	ubuntu                  precise             74fe38d11401        2 weeks ago         209.6 MB
+	ubuntu                  14.04               99ec81b80c55        2 weeks ago         266 MB
+	ubuntu                  latest              99ec81b80c55        2 weeks ago         266 MB
+	ubuntu                  trusty              99ec81b80c55        2 weeks ago         266 MB
+	ubuntu                  13.04               316b678ddf48        2 weeks ago         169.4 MB
+	ubuntu                  raring              316b678ddf48        2 weeks ago         169.4 MB
+	busybox                 latest              2d8e5b282c81        2 weeks ago         2.489 MB
+	ubuntu                  10.04               3db9c44f4520        2 weeks ago         183 MB
+	ubuntu                  lucid               3db9c44f4520        2 weeks ago         183 MB
+
+以这个为例
+
+这里的ubuntu是image名称吗？(后面解答)
+
+一个image完整的名称是:
+
+	username/image_name:tag
+
+docker整体和Github非常像，image管理也不例外。
+
+其中，如果username没有写，则被认为是官方认证过的image。如前面提到，如果tag没有写，则被认为tag是`lastest`。
+
+另外，如果username写了，如 tankywoo/ubuntu，则会在官方index中查找username为tankywoo的ubuntu仓库；如果写的如上`10.2.15.190:5000/tankywoo`，则`10.2.15.190:5000`则被认为是第三方registry的地址。
+
+所以如上所说，ubuntu并不是image的名称，而是repository的名称。
+
+再看看`/var/lib/docker/` 下的 `repositories-aufs`，这是一个repositories的json列表:
+
+	root@tankywoo-docker:~/docker-registry-master# cat /var/lib/docker/repositories-aufs | python -m json.tool
+	{
+		"Repositories": {
+			"10.2.15.190/tankywoo": {
+				"latest": "276cc641e40e01a18f6bee9e81a576adb7090d3fbae098f809857e0696ccbc87"
+			},
+			"10.2.15.190:5000/tankywoo": {
+				"latest": "276cc641e40e01a18f6bee9e81a576adb7090d3fbae098f809857e0696ccbc87"
+			},
+			"busybox": {
+				"latest": "2d8e5b282c81244037eb15b2068e1c46319c1a42b80493acb128da24b2090739"
+			},
+			"ubuntu": {
+				"10.04": "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710",
+				"12.04": "74fe38d114018aac73c5997b95263090048ec9a1f58f33a1b53f55e92156d53b",
+				"13.04": "316b678ddf487a37012630ae3219c8bb78c1f4b58d31c9513c3ea6b88f9e5635",
+				"13.10": "5e019ab7bf6deb75b211411ef7257d1e76bf7edee31d9da62a392df98d0529d6",
+				"14.04": "99ec81b80c55d906afd8179560fdab0ee93e32c52053816ca1d531597c1ff48f",
+				"latest": "99ec81b80c55d906afd8179560fdab0ee93e32c52053816ca1d531597c1ff48f",
+				"lucid": "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710",
+				"newtest": "276cc641e40e01a18f6bee9e81a576adb7090d3fbae098f809857e0696ccbc87",
+				"precise": "74fe38d114018aac73c5997b95263090048ec9a1f58f33a1b53f55e92156d53b",
+				"raring": "316b678ddf487a37012630ae3219c8bb78c1f4b58d31c9513c3ea6b88f9e5635",
+				"saucy": "5e019ab7bf6deb75b211411ef7257d1e76bf7edee31d9da62a392df98d0529d6",
+				"test": "fe65a2781daea01c67c33f11868abe6d510833bca07b90fc681cdfe98a9196ac",
+				"trusty": "99ec81b80c55d906afd8179560fdab0ee93e32c52053816ca1d531597c1ff48f"
+			}
+		}
+	}
+
+可以看到 `10.2.15.190/tankywoo`, `10.2.15.190:5000/tankywoo`, `busybox`, `ubuntu` 等都是repository名，里面包含了一个或多个images。
+
+* registry是repositories的集合
+* repositry是images的集合
+
+参考:
+
+* [Where are Docker images stored?](http://blog.thoward37.me/articles/where-are-docker-images-stored/)
+* [The Docker Guidebook](http://kencochrane.net/blog/2013/08/the-docker-guidebook/#terminology)
+
 
 ## 一些不错的文章 ##
 
 
 * [The Docker Guidebook](http://kencochrane.net/blog/2013/08/the-docker-guidebook/)
 * [The Docker Book](http://dockerbook.com/)
+* [An introduction to Docker: images, containers, links and names](http://paynedigital.com/articles/2013/11/introduction-to-docker)
 * [Day 21：Docker 入门教程](http://segmentfault.com/a/1190000000366923)
 * [Docker入门 @ 于明哲](http://www.mingzhe.org/?p=104)
 * [Docker 初探 @ 青云志](https://log.qingcloud.com/?p=129)
