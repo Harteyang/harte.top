@@ -164,8 +164,12 @@ blockquote {
 }
 
 .post code {
-  color: blue;
   padding: 0 .2em;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
 }
 
 .post pre code {
@@ -175,6 +179,8 @@ blockquote {
   /* background-color: #f8f8f8; */
   padding: 0 .2em;
   border: none;
+  background-color: #333;
+  white-space: pre;
 }
 
 /* terminal */
