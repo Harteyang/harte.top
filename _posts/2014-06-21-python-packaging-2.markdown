@@ -201,19 +201,21 @@ egg更详细介绍见[What is a Python egg?](http://stackoverflow.com/questions/
 
 应该就如上面所说: does a "fake" installation.
 
-`python setup.py register`
+### `python setup.py register`
 
 将软件包注册到[PyPI](https://pypi.python.org/pypi)，主要是通过`<PACKAGE_NAME>.egg-info`目录里的信息。所以在执行register时会同时执行`egg_info`命令。
 
 当执行时，默认情况下，如果本地没有`~/.pypirc`文件，则会讯问是否登录已有PyPI账户或注册一个，如果登录或注册后，会讯问是否将帐号密码保存到本地的`~/.pypirc`文件中，保存后，下次提交或注册其它包就会从这个文件读取账户信息并使用。
 
-`python setup.py develop`
+另外，如果upload的软件包信息（比如description, classifier）等需要更新，只需要本地更新后运行`egg_info`生成xxx.egg-info文件，确认里面的`PKG-INFO`文件内容是对的，就可以执行register命令更新。
+
+### `python setup.py develop`
 
 这个功能超赞！我以前不知道这个命令，然后是手动把此目录作了软链接到`python2.7/site-packages/`下。
 
 看执行日志可以看到实际是在上面的目录中生成了一个`simiki.egg-link`文件，记录了项目实际的目录。
 
-`python setup.py upload`
+### `python setup.py upload`
 
 将相关的项目二进制包上传到PyPI提供下载。
 
