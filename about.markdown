@@ -4,16 +4,6 @@ title: About
 date: 2013-09-10 21:48
 ---
 
-## About Me ##
-
-	- Name : Tanky Woo
-	- Email : me@tankywoo.com
-	- Profession : Python Dev & Linux SA
-	- Keyword : Programmer, Gentoo, Vim, Zsh, OpenSource, Markdown, Python.
-	- Residence : Beijing, China
-
-
-## About Blog ##
 
 这是我的个人博客, 记录技术、生活等方面的点点滴滴。
 
