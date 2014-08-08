@@ -42,7 +42,21 @@ dns包中，不包含点字符，而是对点字符进行分割，每部分的�
 
 具体也可以看看StackOverflow上的[这篇问答](http://stackoverflow.com/a/17184231/1276501), 以及[这篇文章](http://linux.topology.org/iptables_dns_flood.html)
 
-**TODO** 疑问：这里为何需要用"||"括起来？
+    [!] --hex-string pattern
+          Matches the given pattern in hex notation.
+
+    Examples:
+
+          # The string pattern can be used for simple text characters.
+          iptables -A INPUT -p tcp --dport 80 -m string --algo bm --string 'GET /index.html' -j LOG
+
+          # The hex string pattern can be used for non-printable characters, like |0D 0A| or |0D0A|.
+          iptables -p udp --dport 53 -m string --algo bm --from 40 --to 57 --hex-string '|03|www|09|netfilter|03|org|00|'
+
+
+这里 `|` 来标记不可打印的字符，之外的文件都认为是普通ASCII字符.
+
+> The --hex-string parameter parses the provided string looking for hex values delimited by pairs of vertical bars. Anything outside of the vertical bars is interpreted as ASCII text.
 
 
 另外，这里`--algo`指定匹配字符串的算法
