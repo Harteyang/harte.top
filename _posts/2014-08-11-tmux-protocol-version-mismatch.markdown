@@ -22,9 +22,9 @@ Tmux 升级后，运行任何 tmux命令都报以下信息:
 
 然后恢复会话:
 
-    $ /proc/4234/exec attach
+    $ /proc/4234/exe attach
 
-`/proc/<tmux pid>/exec` 其实就是 `/usr/bin/tmux` 的软链接:
+`/proc/<tmux pid>/exe` 其实就是 `/usr/bin/tmux` 的软链接:
 
     $ ll /proc/4234/exe
     /proc/4234/exe -> /usr/bin/tmux
