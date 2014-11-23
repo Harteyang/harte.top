@@ -36,9 +36,15 @@ blockquote {
   /* font: 14px/22px normal helvetica, sans-serif; */
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 15px;
-  border-left: 2px dashed #ccc;
-} 
+  /* padding-left: 15px; */
+  padding: 10px;
+  border-left: 3px dashed #abc;
+  background-color: #eee;
+}
+
+blockquote p {
+  margin: 0;
+}
 
 /*****************************************************************************/
 /*
