@@ -2,5 +2,5 @@ name: "Blog · Tanky Woo"
 description: "Tanky Woo's Blog, focus on Python, Linux, Gentoo, Mac OS, Vim, Open Source and so on."
 url: "http://blog.tankywoo.com"
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 exclude: ["fabfile.py*", "*.bak"]
