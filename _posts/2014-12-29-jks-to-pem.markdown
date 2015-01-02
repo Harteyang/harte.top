@@ -1,0 +1,80 @@
+---
+layout: post
+title: "JKS to PEM"
+date: 2014-12-29 14:10
+---
+
+[JKS(Java KeyStore)](http://en.wikipedia.org/wiki/Keystore)是Java的一个证书仓库, 包括授权证书和公钥证书等.
+
+	$ file tankywoo.jks
+	tankywoo.jks: Java KeyStore
+
+JDK 提供了一个工具 [keytool](http://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html) 用于管理keystore.
+
+安装`JDK`:
+
+	$ sudo emerge -av virtual/jdk
+
+(如果安装`JRE`, 则`emerge -av virtual/jre`)
+
+现提供了一个JKS证书文件和证书的密码，需要转成PEM文件给Nginx SSL配置.
+
+先通过keytool导出成`PKCS12`格式(`.p12`后缀):
+
+	$ keytool -importkeystore -srckeystore tankywoo.jks -destkeystore tankywoo.p12 -srcstoretype jks -deststoretype pkcs12
+	Enter destination keystore password:
+	Re-enter new password:
+	Enter source keystore password:
+	Entry for alias foo successfully imported.
+	Import command completed:  1 entries successfully imported, 0 entries failed or cancelled
+
+指定源(jks)文件和目标(pkcs)文件的文件名和类型.
+
+执行时输入设置给pkcs12证书的密码, 以及jks证书的密码.
+
+再通过`openssl`将pkcs12文件导出成`pem`格式文件.
+
+	# 生成key 加密的pem证书
+	$ openssl pkcs12 -in tankywoo.p12 -out tankywoo.pem
+	Enter Import Password:
+	MAC verified OK
+	Enter PEM pass phrase:
+	Verifying - Enter PEM pass phrase:
+
+	# 生成key 非加密的pem证书
+	$ openssl pkcs12 -nodes -in tankywoo.p12 -out tankywoo.pem
+	Enter Import Password:
+	MAC verified OK
+
+也可以分开导出:
+
+导出key:
+
+	# 生成加密的key
+	$ openssl pkcs12 -in tankywoo.p12  -nocerts -out server.key
+	Enter Import Password:
+	MAC verified OK
+	Enter PEM pass phrase:
+	Verifying - Enter PEM pass phrase:
+
+	# 生成非加密的key
+	$ openssl pkcs12 -in tankywoo.p12 -nocerts -nodes -out server.key
+	Enter Import Password:
+	MAC verified OK
+
+导出server证书:
+
+	$ openssl pkcs12 -in tankywoo.p12  -nokeys -clcerts -out server.crt
+	Enter Import Password:
+	MAC verified OK
+
+导出ca证书:
+
+	$ openssl pkcs12 -in tankywoo.p12  -nokeys -cacerts -out ca.crt
+	Enter Import Password:
+	MAC verified OK
+
+参考:
+
+* [Converting a Java Keystore into PEM Format](http://stackoverflow.com/questions/652916/converting-a-java-keystore-into-pem-format)
+* [Nginx SSL 配置:证书文件制作](http://blog.sina.com.cn/s/blog_4b81125f0100ky4e.html)
