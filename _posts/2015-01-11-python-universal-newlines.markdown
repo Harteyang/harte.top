@@ -115,6 +115,8 @@ def open_without_U(fn):
 
 另外 `os.linesep` 也可以输出当前平台下的换行符.
 
+`file.newlines`, 必须使用`U`模式打开文件, 在经过`read()`或`readlines()`(`readline()`不行)后, 会记录文件的原始newline.
+
 ---
 
 对于跨平台的开发，尽量不用硬编码，而使用Python提供的相应接口。
