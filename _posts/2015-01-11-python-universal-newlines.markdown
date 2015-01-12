@@ -117,6 +117,10 @@ def open_without_U(fn):
 
 `file.newlines`, 必须使用`U`模式打开文件, 在经过`read()`或`readlines()`(`readline()`不行)后, 会记录文件的原始newline.
 
+2015-01-12补充:
+
+`io.open`的功能更强大, 之前在simiki对universal newlines的处理中已经用到了. 它可以控制打开文件时的编码, 并且也有newline参数控制, 默认为None, read时会自动统一为universal newlines.也可以关闭掉. write时也可以选择是否更具相应平台改为相应的实际newline符.
+
 ---
 
 对于跨平台的开发，尽量不用硬编码，而使用Python提供的相应接口。
