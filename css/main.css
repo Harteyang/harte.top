@@ -13,7 +13,7 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
+  background-color: #95AFBA;
   font: 13.9px Helvetica, Arial, sans-serif;
   text-align: center;
 }
@@ -46,6 +46,19 @@ blockquote p {
   margin: 0;
 }
 
+/* Gradient transparent - color - transparent
+http://css-tricks.com/examples/hrs/
+*/
+hr {
+    border: 0px;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    margin: 15px 0;
+}
+
 /*****************************************************************************/
 /*
 /* Home
@@ -61,9 +74,9 @@ blockquote p {
 }
 
 .posts span {
-  color: #aaa;
+  color: #ccc;
   font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+  font-size: 70%;
 }
 
 /*****************************************************************************/
@@ -75,9 +88,12 @@ blockquote p {
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
+  width: 46em;
+  margin: 0 auto;
   line-height: 1.5em;
+  padding: 3em 2em 2em 2em;
+  border: 1px solid #ddd;
+  background-color: #fbfffd;
 }
 
 .header a {
@@ -88,6 +104,7 @@ blockquote p {
 .title {
   display: inline-block;
   margin-bottom: 2em;
+  font-size: 16px;
 }
 
 .title a {
@@ -101,6 +118,7 @@ blockquote p {
 .header a.extra {
   color: #aaa;
   margin-left: 1em;
+  font-size: 13px;
 }
 
 .header a.extra:hover {
@@ -143,6 +161,10 @@ p img {
   width: 100%;
 }
 
+#home .posts li a {
+  font-size: 92%;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -154,7 +176,7 @@ p img {
 }
 
 #pagetitle h2 {
-  font-size: 22px;
+  font-size: 19px;
 }
 
 /* standard */
@@ -205,16 +227,17 @@ p img {
 }
 
 .post h1 {
-  font-size: 150%;
+  font-size: 140%;
   margin-bottom: 0.66em;
 }
 
 .post h2 {
-  font-size: 140%;
+  font-size: 120%;
+  color: #9C9583;
   margin-bottom: 0.6em;
 }
 .post h3 {
-  font-size: 125%;
+  font-size: 115%;
   margin-bottom: 0.8em;
 }
 .post h4 {
