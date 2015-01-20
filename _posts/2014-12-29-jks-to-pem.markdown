@@ -13,7 +13,12 @@ JDK 提供了一个工具 [keytool](http://docs.oracle.com/javase/6/docs/technot
 
 安装`JDK`:
 
+	# Gentoo
 	$ sudo emerge -av virtual/jdk
+
+	# Ubuntu 两个都行
+	# sudo apt-get install openjdk-6-jdk	# 1.6
+	# sudo apt-get install openjdk-7-jdk	# 1.7 
 
 (如果安装`JRE`, 则`emerge -av virtual/jre`)
 
@@ -78,3 +83,4 @@ JDK 提供了一个工具 [keytool](http://docs.oracle.com/javase/6/docs/technot
 
 * [Converting a Java Keystore into PEM Format](http://stackoverflow.com/questions/652916/converting-a-java-keystore-into-pem-format)
 * [Nginx SSL 配置:证书文件制作](http://blog.sina.com.cn/s/blog_4b81125f0100ky4e.html)
+* [Java Keytool Essentials: Working with java Keytools](https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores)
