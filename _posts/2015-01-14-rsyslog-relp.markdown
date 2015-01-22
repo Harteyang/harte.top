@@ -86,7 +86,7 @@ RELP是一个C/S模型, 提供了一种command-response模型, 客户端(client)
 
 BOSS之前发现一个节点会有好几个tcp连接, 有些还没有及时关闭掉.(这里我之前没有去查看...)
 
-之前rsyslog的版本是7.x, 用的是老配置(legacy rsyslog), 在`8.1.4`版本以后，新的配置语法(RainerScript)对`imrelp`增加了`KeepAlive`的选项, 这个选项默认是关闭的.
+之前rsyslog的版本是7.x, 用的是老配置(legacy rsyslog), 在`8.1.4`版本以后，新的配置语法(RainerScript)对[`imrelp`](http://www.rsyslog.com/doc/imrelp.html)增加了`KeepAlive`的选项, 这个选项默认是关闭的.
 
 升级到新版本的rsyslog, 给imrelp配置上这个参数, 查看进程的文件句柄, 发现都是一个节点一个文件句柄了.
 
