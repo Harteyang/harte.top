@@ -58,5 +58,43 @@ RELP是一个C/S模型, 提供了一种command-response模型, 客户端(client)
 
 继续搜索发现rsyslog有配置ulimit的相关参数[`$MaxOpenFiles`](http://www.rsyslog.com/doc/rsconf1_maxopenfiles.html), 把最大打开文件数给调大了.
 
-TODO: 这几天再观察下, 看看是否还有这个问题出现.
+<strike>TODO: 这几天再观察下, 看看是否还有这个问题出现.</strike>
 
+---
+
+2015-01-22 补充:
+
+首先设置了`$MaxOpenFiles`后，这几天没有出现这个问题.
+
+另外，今天查看了下rsyslog的文件句柄数:
+
+    lsof -a -p `pgrep rsyslog` | wc -l
+
+或者:
+
+    ls -l /proc/`pgrep rsyslog`/fd/ | wc -l
+
+一个tcp connection一个文件句柄，按理应该不会超过系统默认的ulimit:
+
+    $ cat /proc/`pgrep rsyslog`/limits | grep 'Max open files'
+    Limit                     Soft Limit           Hard Limit           Units
+    Max open files            1024                 4096                 files
+
+默认应该可以达到Hard Limit.
+
+后来和BOSS说到这事, 知道他修改了一个地方, 这个地方很关键.
+
+BOSS之前发现一个节点会有好几个tcp连接, 有些还没有及时关闭掉.(这里我之前没有去查看...)
+
+之前rsyslog的版本是7.x, 用的是老配置(legacy rsyslog), 在`8.1.4`版本以后，新的配置语法(RainerScript)对`imrelp`增加了`KeepAlive`的选项, 这个选项默认是关闭的.
+
+升级到新版本的rsyslog, 给imrelp配置上这个参数, 查看进程的文件句柄, 发现都是一个节点一个文件句柄了.
+
+    # 老的配置 legacy rsyslog
+    $ModLoad imrelp
+
+    # 新的配置 RainerScript
+    module(load="imrelp")
+    input(type="imrelp" port="514" KeepAlive="on")
+
+圆满解决 :)
