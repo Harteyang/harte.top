@@ -80,3 +80,112 @@ Output:
 	{'confidence': 0.7679697235616183, 'encoding': 'IBM855'}
 	u'\u4e2d\u56fd'
 
+---
+
+## `unicode_literals` in `__future__` ##
+
+[`unicode_literals`](https://docs.python.org/2/library/__future__.html) add in Python 2.6, I usual add this for uniform encoding environment and compatibility
+
+The default string type is `str` in Python 2.x, after `from __future__ import unicode_literals`, the string type is unicode.
+
+First, the common mode without `unicode_literals`:
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+from pprint import pprint
+
+s = ['abc', u'abc', '中国', u'中国']
+
+for i in s:
+        print(i, end=': ')
+        pprint(type(i))
+        print('')
+
+print('------- decode:')
+for i in s:
+        try:
+                print(i, end=': ')
+                pprint(type(i.decode('utf-8')))
+        except Exception as e:
+                print(">>> error: " + str(e))
+        finally:
+                print('')
+
+print('------- encode:')
+for i in s:
+        try:
+                print(i, end=': ')
+                pprint(type(i.encode('utf-8')))
+        except Exception as e:
+                print(">>> error: " + str(e))
+        finally:
+                print('')
+```
+
+Output:
+
+	abc: <type 'str'>
+
+	abc: <type 'unicode'>
+
+	中国: <type 'str'>
+
+	中国: <type 'unicode'>
+
+	------- decode:
+	abc: <type 'unicode'>
+
+
+	abc: <type 'unicode'>
+
+	中国: <type 'unicode'>
+
+	中国: >>> error: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
+
+	------- encode:
+	abc: <type 'str'>
+
+	abc: <type 'str'>
+
+	中国: >>> error: 'ascii' codec can't decode byte 0xe4 in position 0: ordinal not in range(128)
+
+	中国: <type 'str'>
+
+If add `unicode_literals`:
+
+	abc: <type 'unicode'>
+
+	abc: <type 'unicode'>
+
+	中国: <type 'unicode'>
+
+	中国: <type 'unicode'>
+
+	------- decode:
+	abc: <type 'unicode'>
+
+	abc: <type 'unicode'>
+
+	中国: >>> error: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
+
+	中国: >>> error: 'ascii' codec can't encode characters in position 0-1: ordinal not in range(128)
+
+	------- encode:
+	abc: <type 'str'>
+
+	abc: <type 'str'>
+
+	中国: <type 'str'>
+
+	中国: <type 'str'>
+
+
+Use `unicode_literals`, all the string variable is unicode.
+
+Other discuss:
+
+* [Any gotchas using unicode_literals in Python 2.6?](http://stackoverflow.com/questions/809796/any-gotchas-using-u    nicode-literals-in-python-2-6)
+* [Should I import unicode_literals?](http://python-future.org/unicode_literals.html)
+
