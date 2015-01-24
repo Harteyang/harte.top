@@ -61,17 +61,19 @@ First use `iconv` to convert the source file encoding to gb2312:
 
 The source code:
 
-	#!/usr/bin/env python
-	# -*- coding: gb2312 -*-
+```python
+#!/usr/bin/env python
+# -*- coding: gb2312 -*-
 
-	import chardet
-	from pprint import pprint
-	s = '中国'
+import chardet
+from pprint import pprint
+s = '中国'
 
-	pprint(s)
-	print chardet.detect(s)
+pprint(s)
+print chardet.detect(s)
 
-	pprint(s.decode('gb2312'))
+pprint(s.decode('gb2312'))
+```
 
 Output:
 
@@ -88,7 +90,7 @@ Output:
 
 The default string type is `str` in Python 2.x, after `from __future__ import unicode_literals`, the string type is unicode.
 
-First, the common mode without `unicode_literals`:
+First, the normal mode without `unicode_literals`:
 
 ```python
 #!/usr/bin/env python
@@ -136,7 +138,6 @@ Output:
 
 	------- decode:
 	abc: <type 'unicode'>
-
 
 	abc: <type 'unicode'>
 
@@ -188,4 +189,139 @@ Other discuss:
 
 * [Any gotchas using unicode_literals in Python 2.6?](http://stackoverflow.com/questions/809796/any-gotchas-using-u    nicode-literals-in-python-2-6)
 * [Should I import unicode_literals?](http://python-future.org/unicode_literals.html)
+
+---
+
+
+## System Default Encoding ##
+
+Two releated function
+
+
+	sys.getdefaultencoding()
+	sys.setdefaultencoding()
+
+`getdefaultencoding()` get default string encoding, under Python 2.x, it's usual `ascii`; 
+
+`setdefaultencoding()` change default string encoding. but you need `reload(sys)` first, the reason [Changing default encoding of Python?](http://stackoverflow.com/questions/2276200/changing-default-encoding-of-python)
+
+
+First, look back the above code:
+
+1. in normal mode, `u'中国'` can't be decoded, but `u'abc'` can.
+2. `u'中国'` do decode, but error message is `'ascii' codec can't encode characters`, and raise `UnicodeEncodeError`
+
+(Note this is just a example, **do not** decode a unicode!!!)
+
+The reason is that:
+
+> Python is helpful!!!
+
+When do decode, Python check and find the variable is unicode, so it will do `encode(sys.getdefaultencoding())` first, and then decode this generated str. But when do encode, there is error.
+
+Other discuss:
+
+* [unicode().decode('utf-8', 'ignore') raising UnicodeEncodeError](http://stackoverflow.com/questions/5096776/unico    de-decodeutf-8-ignore-raising-unicodeencodeerror)
+
+
+Another example based on above code:
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+import sys
+from pprint import pprint
+
+print(sys.getdefaultencoding())
+reload(sys)
+sys.setdefaultencoding('utf-8')
+print(sys.getdefaultencoding())
+print('\n-------\n')
+
+s = ['abc', u'abc', '中国', u'中国']
+
+for i in s:
+    print(i, end=': ')
+    pprint(type(i))
+    print('')
+
+print('------- decode:')
+
+for i in s:
+    try:
+        print(i, end=': ')
+        pprint(type(i.decode('utf-8')))
+    except Exception as e:
+        print(">>> error: " + str(e))
+    finally:
+        print('')
+
+print('------- encode:')
+
+
+for i in s:
+    try:
+        print(i, end=': ')
+        pprint(type(i.encode('utf-8')))
+    except Exception as e:
+        print(">>> error: " + str(e))
+    finally:
+        print('')
+```
+
+Output:
+
+	$ python defaultencoding.py
+	ascii
+	utf-8
+
+	-------
+
+	abc: <type 'str'>
+
+	abc: <type 'unicode'>
+
+	中国: <type 'str'>
+
+	中国: <type 'unicode'>
+
+	------- decode:
+	abc: <type 'unicode'>
+
+
+	abc: <type 'unicode'>
+
+	中国: <type 'unicode'>
+
+	中国: <type 'unicode'>
+
+	------- encode:
+	abc: <type 'str'>
+
+	abc: <type 'str'>
+
+	中国: <type 'str'>
+
+	中国: <type 'str'>
+
+As see output, the default string encoding is ascii, if change to `utf-8`, there is no error.
+
+
+---
+
+## Other References ##
+
+* [Python Howto - unicode](https://docs.python.org/2/howto/unicode.html)
+* [Pragmatic Unicode](http://nedbatchelder.com/text/unipain/unipain.html) Excellent doc, multiple pages
+* [Pragmatic Unicode](http://nedbatchelder.com/text/unipain.html) single page
+* [Python Wiki - Default Encoding](https://wiki.python.org/moin/DefaultEncoding)
+* [Correctly using unicode in python2](https://fedorahosted.org/releases/k/i/kitchen/docs/unicode-frustrations.html)
+* [Unicode in Python, and how to prevent it](http://washort.twistedmatrix.com/2010/11/unicode-in-python-and-how-to-prevent-it.html)
+* [The problem I asked in Stackoverflow](http://stackoverflow.com/questions/28062518/python-decode-in-unicode-variable-with-non-ascii-character-or-without/)
+* [字符编码笔记：ASCII，Unicode和UTF-8](http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html)
+* [怎么在Python里使用UTF-8编码](http://liguangming.com/how-to-use-utf-8-with-python)
+* [Python字符编码详解](http://www.cnblogs.com/huxi/articles/1897271.html)
+* [Python中的字符串编码（Encode）与解码（Decode）](http://zhangxc.com/2014/10/python-encode-decode)
+* [PYTHON-进阶-编码处理小结](http://wklken.me/posts/2013/08/31/python-extra-coding-intro.html)
 
