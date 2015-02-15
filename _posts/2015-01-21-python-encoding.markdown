@@ -307,6 +307,54 @@ Output:
 
 As see output, the default string encoding is ascii, if change to `utf-8`, there is no error.
 
+---
+
+Supplement(2015-02-16):
+
+	In [11]: s = u'hello world'
+
+	In [12]: s
+	Out[12]: u'hello world'
+
+	In [13]: s.decode()
+	Out[13]: u'hello world'
+
+	In [14]: s.decode('utf-8')
+	Out[14]: u'hello world'
+
+	In [15]: unicode(s)
+	Out[15]: u'hello world'
+
+	In [16]: unicode(s, 'utf-8')
+	---------------------------------------------------------------------------
+	TypeError                                 Traceback (most recent call last)
+	<ipython-input-16-20705e8c9e2c> in <module>()
+	----> 1 unicode(s, 'utf-8')
+
+	TypeError: decoding Unicode is not supported
+
+The last example has error, why?
+
+See the [doc](https://docs.python.org/2/library/functions.html#unicode):
+
+	unicode(object='')
+	unicode(object[, encoding[, errors]])
+
+> If encoding and/or errors are given, unicode() will decode the object which can either be an 8-bit string or a character buffer using the codec for encoding.
+
+> If no optional parameters are given, unicode() will mimic the behaviour of str() except that it returns Unicode strings instead of 8-bit strings. More precisely, if object is a Unicode string or subclass it will return that Unicode string without any additional decoding applied.
+
+This is a little different with `decode`, which will always do nothing if the object is unicode.
+
+So, what is the differenct between `str.decode()` and `unicode()`?
+
+They are essentially the same, but there are some little difference, above is one of it, others:
+
+1. `unicode` is faster than `str.decode()`, [ref](http://stackoverflow.com/a/440432/1276501)
+2. `unicode` is no longer exists in Python3.x, because the string type is unicode by default. [ref](http://stackoverflow.com/a/440461/1276501)
+3. The `unicode` constructor can take other types apart from strings, such as `unicode(10)`. [ref](http://stackoverflow.com/a/11861660/1276501)
+4. Some encoding options are not valid for the `unicode`, but valid for the `str.decode()`. [ref](http://stackoverflow.com/a/11861660/1276501)
+
 
 ---
 
@@ -324,4 +372,5 @@ As see output, the default string encoding is ascii, if change to `utf-8`, there
 * [Python字符编码详解](http://www.cnblogs.com/huxi/articles/1897271.html)
 * [Python中的字符串编码（Encode）与解码（Decode）](http://zhangxc.com/2014/10/python-encode-decode)
 * [PYTHON-进阶-编码处理小结](http://wklken.me/posts/2013/08/31/python-extra-coding-intro.html)
+* [what's the difference between unicode(self) and self.__unicode__() in a Python Class?](http://stackoverflow.com/questions/11117156/whats-the-difference-between-unicodeself-and-self-unicode-in-a-python-c)
 
