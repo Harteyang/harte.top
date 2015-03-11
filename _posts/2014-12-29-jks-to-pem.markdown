@@ -79,8 +79,74 @@ JDK 提供了一个工具 [keytool](http://docs.oracle.com/javase/6/docs/technot
 	Enter Import Password:
 	MAC verified OK
 
+---
+
+2015-03-11 补充:
+
+今天有一个jks证书, 导出为p12时报错:
+
+	$ keytool -importkeystore -srckeystore keystore.jks -destkeystore keystore.p12 -srcstoretype jks -deststoretype pkcs12
+
+	Enter destination keystore password:
+	Re-enter new password:
+	Enter source keystore password:
+	Entry for alias keystore successfully imported.
+	Problem importing entry for alias intermediate2: java.security.KeyStoreException: TrustedCertEntry not supported.
+	Entry for alias intermediate2 not imported.
+	Do you want to quit the import process? [no]:  n
+	Problem importing entry for alias intermediate1: java.security.KeyStoreException: TrustedCertEntry not supported.
+	Entry for alias intermediate1 not imported.
+	Do you want to quit the import process? [no]:  n
+	Import command completed:  1 entries successfully imported, 2 entries failed or cancelled
+
+生成的p12只能导出server.crt和ca.crt, 无法导出server.key
+
+查看jks证书内容:
+
+	$ keytool -list -v -keystore keystore.jks
+
+看到有两个`trustedCertEntry`
+
+	Alias name: intermediate1
+	Creation date: Apr 30, 2014
+	Entry type: trustedCertEntry
+	...
+
+	Alias name: intermediate2
+	Creation date: Apr 30, 2014
+	Entry type: trustedCertEntry
+	...
+
+这个讨论里提到了原因: [ref 1](http://stackoverflow.com/questions/652916/converting-a-java-keystore-into-pem-format#comment1252648_656559)
+
+具体也可以看[手册](http://docs.oracle.com/javase/6/docs/technotes/guides/security/jsse/JSSERefGuide.html#InstallProbs)
+
+	java.security.KeyStoreException: TrustedCertEntry not supported
+	Problem: Attempt to store trusted certificates in PKCS12 keystore throws java.security.KeyStoreException: TrustedCertEntry not supported.
+
+	Cause 1: We do not support storing trusted certificates in pkcs12 keystore. PKCS12 is mainly used to deliver private keys with the associated cert chains. It does not have any notion of "trusted" certificates. Note that in terms of interoperability, other pkcs12 vendors have the same restriction. Browsers such as Mozilla and Internet Explorer do not accept a pkcs12 file with only trusted certs.
+
+	Solution 1: Use JKS (or JCEKS) keystore for storing trusted certificates.
+
+但是把Google搜了一圈, 也没发现解决方法, 囧.
+
+后来问老大, 刚好他几年前的一篇博客有方法 [从 JKS keystore 中迁移证书到 Apache](http://blog.clanzx.net/2010/07/08/ssl.html)
+
+具体可参考这篇博客[Exporting the Private Key From a JKS Keystore](http://anandsekar.github.io/exporting-the-private-key-from-a-jks-keystore/), 这是一个java写的工具, 下载zip包直接使用 [ExportPrivateKey.zip](http://anandsekar.github.io/assets/downloads/pkexport/ExportPrivateKey.zip)
+
+调用方式:
+
+	java -jar ExportPrivateKey.zip {keystore_path} JKS {keystore_password} {alias} {target_file}
+
+alias可以通过上面的`keytool -list`看到.
+
+用此命令生成了server.key, 和之前生成的server.crt, ca.crt合并就可以了
+
+---
+
 参考:
 
 * [Converting a Java Keystore into PEM Format](http://stackoverflow.com/questions/652916/converting-a-java-keystore-into-pem-format)
 * [Nginx SSL 配置:证书文件制作](http://blog.sina.com.cn/s/blog_4b81125f0100ky4e.html)
 * [Java Keytool Essentials: Working with java Keytools](https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores)
+* [Extracting public and private keys from a Java Key Store (JKS)](http://crishantha.com/wp/?p=445)
