@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "iptables的hashlimit模块"
-date: 2015-03-09 15:00
+date: 2015-03-18 21:00
 ---
 
 某机器有一条防DNS攻击的规则:
