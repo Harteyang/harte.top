@@ -132,4 +132,10 @@ It is a simple wrapper to wrap python tools under `/usr/bin`.
 
 For some reason(I have not found), another software(maybe pygments) overwrite the `/usr/bin/python-exec`.
 
-Reinstall `python-exec` and solve this strange problem.
+Reinstall `python-exec` and solve this strange problem:
+
+	emerge -avD python-exec
+
+Disable python-exec to be changed by other package:
+
+	emerge --oneshort python-exec:2
