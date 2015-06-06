@@ -26,13 +26,16 @@ SysVinit (System-V style init) 是一个传统的初始化进程.
 
 K(Kill)表示关闭, S(Start)表示运行, 数字20表示优先级.
 
-使用`update-rc.d`命令可以管理启动项(TODO 不确定RHEL系默认是否有这个命令):
+使用`update-rc.d`命令可以管理启动项(TODO 不确定RHEL系默认是否有这个命令, RHEL系有`chkconfig`):
 
 * update-rc.d xxx remove 删除启动项
 * update-rc.d xxx enable|disable 开启/关闭 启动项, 必须在有启动项软链接时才可用
 * update-rc.d xxx defaults 加入到启动项(默认级别)
 
-RHEL系还有`chkconfig`命令
+另外通过`service`命令来控制SysV服务的启动,停止及状态查看 (service  runs a System V init script or upstart job in as predictable environment as possible).
+
+`service --status-all` 可以查看所有SysVinit和Upstart的服务状态
+
 
 ## Upstart ##
 
