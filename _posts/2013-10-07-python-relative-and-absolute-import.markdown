@@ -143,6 +143,43 @@ That as list in `import this`:
 
 > Explicit is better than implicit
 
+---
+2015-08-25 Supplement:
+
+前阵子写了一个功能脚本utils/redis.py, 封装了redis-py(import redis)实现一些功能检查:
+
+    TankyWoo % tree
+    .
+    ├── main.py
+    └── utils
+        ├── __init__.py
+        └── redis.py
+
+    1 directory, 3 files
+
+    TankyWoo % more main.py
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*-
+    from utils import redis
+
+    if __name__ == '__main__':
+        redis.func()
+
+    TankyWoo % more utils/redis.py
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*-
+    from __future__ import absolute_import
+    import redis
+
+    def func():
+        print redis.Redis
+
+    if __name__ == '__main__':
+        func()
+
+这块在utils/redis.py里必须指定绝对导入, 否则就相当于导入自身了.
+
+
 Ref:
 
 1. [PEP 0328](https://www.python.org/dev/peps/pep-0328/)
