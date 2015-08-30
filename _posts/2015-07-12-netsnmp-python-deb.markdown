@@ -184,6 +184,8 @@ centos[6|7] 下则比较简单, 直接:
     rmdir: failed to remove `debian/tmp/usr/local/lib/perl/5.14.2/NetSNMP/agent': Directory not empty
     dh_usrlocal: rmdir debian/tmp/usr/local/lib/perl/5.14.2/NetSNMP/agent returned exit code 1
 
+---
+
 TODO:
 
 参考这个[讨论](http://forums.debian.net/viewtopic.php?f=8&t=52928), 怀疑可能需要保留debian/source/format 这个文件.
@@ -191,6 +193,12 @@ TODO:
 或者增加:
 
     export PREFIX=/usr
+
+另外参考这个netsnmp 5.7.3 rules:
+
+https://tracker.debian.org/media/packages/n/net-snmp/rules-5.7.3%2Bdfsg-1
+
+---
 
 
 在源码目录执行打包命令:
