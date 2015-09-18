@@ -8,7 +8,7 @@ ID: **Tanky Woo**
 
 这是我的个人博客, 记录技术、生活等方面的点点滴滴。
 
-关于技术上的，这些技术片段我会逐步汇总到我的 [wiki](http://wiki.wutianqi.com) 上。
+关于技术上的，这些技术片段我会逐步汇总到我的 [wiki](http://wiki.tankywoo.com) 上。
 
 我的个人维基使用的是[Simiki](http://simiki.org/)的, 这个是我一直在做的一个基于Python的开源维基框架. 感兴趣的朋友不妨试试.
 
