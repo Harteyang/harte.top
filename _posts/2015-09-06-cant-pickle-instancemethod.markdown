@@ -38,10 +38,18 @@ date: 2015-09-06 21:00
 
 这里加上构造函数和析构函数, 是因为后面在这里会有问题.
 
-另外, 这里有个比较奇怪的现象, 原先实例类时, 变量名是kls, 但是析构出错, 改为als没有问题, 试了很多变量名, 有的有问题, 有的没问题, 还不清楚原因 TODO
+另外, 这里有个比较奇怪的现象, 原先实例类时, 变量名是kls, 但是析构出错, 改为als没有问题, 试了很多变量名, 有的有问题, 有的没问题, <strike>还不清楚原因</strike>
 
 	Constructor ... MainProcess
 	Exception AttributeError: "'NoneType' object has no attribute 'current_process'" in <bound method Klass.__del__ of <__main__.Klass object at 0x103a1ce10>> ignored
+
+原因已经找到, 参考[`__del__`](https://docs.python.org/2/reference/datamodel.html#object.__del__)文档:
+
+> Starting with version 1.5, Python guarantees that globals whose name begins with a single underscore are deleted from their module before other globals are deleted; if no other references to such globals exist, this may help in assuring that imported modules are still available at the time when the `__del__()` method is called.
+
+对于普通变量, Python无法保证`__del__`和对象销毁的顺序, 如果变量名以下划线开头, 可以保证此变量在其它导入模块之前调用.
+
+具体可以看看我在StackOverflow上的[提问](http://stackoverflow.com/questions/32443135/python-strange-multiprocessing-with-variable-name)
 
 正常执行结果:
 
