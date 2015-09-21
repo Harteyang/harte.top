@@ -172,12 +172,13 @@ p img {
 /* standard */
 .post pre {
   font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
-  font-size: 13px;
-  background-color: #333;
+  font-size: 80%;
   padding: 0 .4em;
   overflow: auto;
   margin: 1em 0;
   padding: 5px 0 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .post ul, .post ol {
@@ -185,8 +186,9 @@ p img {
   margin-bottom: 1em;
 }
 
-.post code {
+.post p code {
   padding: 0 .2em;
+  margin: 0 .2em;
   font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
@@ -196,24 +198,9 @@ p img {
 
 .post pre code {
   font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
-  color: white;
-  /* background-color: #eef; */
-  /* background-color: #f8f8f8; */
   padding: 0 .2em;
   border: none;
-  background-color: #333;
   white-space: pre;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
 }
 
 .post h1 {
@@ -226,3 +213,11 @@ p img {
   font-size: 1.3em;
   margin-bottom: 0.6em;
 }
+
+/*****************************************************************************/
+/*
+/* Reset Syntax color
+/*
+/*****************************************************************************/
+/* for colorful */
+.highlight  { background: #fbfffd; }
