@@ -186,3 +186,5 @@ Ref:
 2. [What's wrong with relative imports in Python?](http://programmers.stackexchange.com/questions/159503/whats-wrong-with-relative-imports-in-python)
 3. [Attempted relative import in non-package even with __init__.py](http://stackoverflow.com/questions/11536764/attempted-relative-import-in-non-package-even-with-init-py)
 4. [Why does PEP 8 advise against explicit relative imports?](http://www.gossamer-threads.com/lists/python/dev/1072694)
+5. [Python导入的路径，绝对导入，相对导入](http://zhuhaipeng.me/blog/2014/08/26/pythondao-ru-de-lu-jing-,jue-dui-dao-ru-,xiang-dui-dao-ru/)
+6. [Python 类库引入机制](https://github.com/Liuchang0812/slides/tree/master/pycon2015cn)
