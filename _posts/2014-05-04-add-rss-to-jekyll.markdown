@@ -11,6 +11,7 @@ categories: Blog
 
 我只使用了其中的 [`feed.xml`](https://raw.githubusercontent.com/snaptortoise/jekyll-rss-feeds/master/feed.xml) ，其余的对我作用不大。
 
+{% raw %}
     ---
     ---
     <?xml version="1.0" encoding="UTF-8"?>
@@ -38,6 +39,7 @@ categories: Blog
             {% endfor %}
         </channel>
     </rss>
+{% endraw %}
 
 把这个文件放到整个Jekyll目录的根下，然后编辑`_config.yml`，增加如下字段:
 
