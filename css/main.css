@@ -219,6 +219,20 @@ p img {
   margin-bottom: 0.6em;
 }
 
+.post h2:before, .post h3:before {
+  color: #42b983;
+  margin-right: 0.3em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.post h2:before {
+  content: "##";
+}
+.post h3:before {
+  content: "###";
+}
+
 /*****************************************************************************/
 /*
 /* Reset Syntax color
