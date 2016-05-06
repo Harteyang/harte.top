@@ -16,21 +16,21 @@ date: 2016-04-25 22:00
 
 22号到了杭州后，直接转地铁和大巴，坐到乌镇，已是下午1、2点，和磊磊、杰宝碰头。然后去简单的吃了顿饭，下午买票直接去了东栅。
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-1.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-1.jpg)
 
 有句话是「游玩东栅游西栅」，东栅偏向于历史文化景点。而西栅则是原生的水乡风情。
 
 当然，东栅的水上景色也不错（人很多，对面都是的……）：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-2.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-2.jpg)
 
 茅盾纪念馆：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-3.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-3.jpg)
 
 酒窖：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-4.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-4.jpg)
 
 初来一天，杭州给我的感觉就是有几个特色：白鲢鱼（中午吃了……），粽子（以及荷叶做的各种延伸的菜），青团，再就是酒（包括米酒，北方叫醪糟）。
 
@@ -44,36 +44,36 @@ date: 2016-04-25 22:00
 
 夜晚的西栅，灯火通明，人不比白天少：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-5.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-5.jpg)
 
 找了个地方，开始我最开心的事情了，喝酒和唠嗑（吹牛逼）：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-6.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-6.jpg)
 
 第二天，就开始玩西栅了，这天雨比较大，不过都是一阵一阵的。当然，玩的人并不比昨天少，因为是周六。
 
 西栅更符合我的口味，东栅的文化景点太文艺，他们几个家伙都是这类人，我还是喜欢一些自然风景：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-7.jpg)
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-8.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-7.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-8.jpg)
 
 白莲塔寺（不过貌似和那啥没关系）：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-9.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-9.jpg)
 
 京杭大运河：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-10.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-10.jpg)
 
 下午坐大巴返回杭州。
 
 25号是在杭州玩的，先去看了下岳王庙：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-11.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-11.jpg)
 
 然后走了一遍苏堤，大概4、5公里，因为时间比较赶，没怎么停留：
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-12.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-12.jpg)
 
 下午就赶着去火车站坐高铁回京了，晚上快11点才到家。
 
@@ -81,6 +81,6 @@ date: 2016-04-25 22:00
 
 乌镇有一观二塔之称，一观就是指这修真观，二塔之一就是上面的白莲塔寺。
 
-![](http://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-0.jpg)
+![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-0.jpg)
 
 难得几个兄弟从全国三个地方一起聚起来玩一趟，真的不容易，明年再约起。

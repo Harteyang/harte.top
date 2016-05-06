@@ -15,7 +15,7 @@ date: 2015-05-29 16:00
     Creating journal (xxx blocks): mke2fs: Can't check if filesystem is mounted due 
     to missing mtab file while trying to create journal
 
-![mke2fs-mtab-problem-screenshot](http://tankywoo-wb.b0.upaiyun.com/mke2fs-mtab-problem-screenshot.png!small)
+![mke2fs-mtab-problem-screenshot](https://tankywoo-wb.b0.upaiyun.com/mke2fs-mtab-problem-screenshot.png!small)
 
 原因是`/etc/mtab`文件没有, 因为之前通过rsync module同步时, 这个文件在exclude列表里.
 

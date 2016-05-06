@@ -8,7 +8,7 @@ categories: Nagios
 
 <!-- more -->
 
-![Nagios系统监控实践 封面](http://tankywoo-wb.b0.upaiyun.com/nagios-xi-tong-jian-kong-shi-jian.jpg)
+![Nagios系统监控实践 封面](https://tankywoo-wb.b0.upaiyun.com/nagios-xi-tong-jian-kong-shi-jian.jpg)
 
 最近花了3个晚上快速看了这本书，一些暂时不会用的内容就直接忽略了。内容组成大概是80%的基础+20%的经验。
 
@@ -105,7 +105,7 @@ categories: Nagios
 
 > NRPE allows you to remotely execute Nagios plugins on other Linux/Unix machines. This allows you to monitor remote machine metrics (disk usage, CPU load, etc.). NRPE can also communicate with some of the Windows agent addons, so you can execute scripts and check metrics on remote Windows machines as well.
 
-![Nagios NRPE 原理图](http://tankywoo-wb.b0.upaiyun.com/nagios_nrpe.png)
+![Nagios NRPE 原理图](https://tankywoo-wb.b0.upaiyun.com/nagios_nrpe.png)
 
 NRPE是一个轻量级的C/S系统，通过它Nagios服务器可以执行存放在被监控主机上的远端插件。
 
@@ -117,7 +117,7 @@ NRPE是一个轻量级的C/S系统，通过它Nagios服务器可以执行存放�
 
 ### Check MK(P114) ###
 
-![Check MK 原理图](http://tankywoo-wb.b0.upaiyun.com/nagios_check_mk.png)
+![Check MK 原理图](https://tankywoo-wb.b0.upaiyun.com/nagios_check_mk.png)
 
 [Check\_MK](http://mathias-kettner.com/check_mk.html) 与传统的插件不一样，它是一个运行在被监控主机上的一个Agent。
 

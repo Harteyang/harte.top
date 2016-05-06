@@ -8,7 +8,7 @@ categories: Book
 
 <!-- more -->
 
-![图解TCP/IP封面](http://tankywoo-wb.b0.upaiyun.com/tujie_tcp_ip.jpg)
+![图解TCP/IP封面](https://tankywoo-wb.b0.upaiyun.com/tujie_tcp_ip.jpg)
 
 这本书是13年中旬出版的(第五版)，当时推广的算比较火，应该是因其**入门级**的特点而比较受欢迎。
 

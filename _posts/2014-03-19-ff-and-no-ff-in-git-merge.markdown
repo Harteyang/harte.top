@@ -21,7 +21,7 @@ categories: Git
 
 fast forward 和 no fast forward 的合并图:
 
-![git branch merge](http://tankywoo-wb.b0.upaiyun.com/git-branch-merge.png)
+![git branch merge](https://tankywoo-wb.b0.upaiyun.com/git-branch-merge.png)
 
 <sup>(图片来至 [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/))</sup>
 

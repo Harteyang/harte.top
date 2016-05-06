@@ -55,7 +55,7 @@ categories: Docker
 
 使用前者，会在本地打开5000端口监听，访问可以看到:
 
-![registry success](http://tankywoo-wb.b0.upaiyun.com/docker-registry.png!small)
+![registry success](https://tankywoo-wb.b0.upaiyun.com/docker-registry.png!small)
 
 	root@tankywoo-docker:~/docker-registry-master# docker images
 	REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE

@@ -41,7 +41,7 @@ Applications like email (Gmail, Yahoo mail etc), Social Networking sites (Facebo
 
 正好在微博上看到 @[老刀IBM](http://weibo.com/1586108233/B3bGwpDKJ) 分享的一个三者关系图：
 
-![IAAS vs PAAS vs SaaS](http://tankywoo-wb.b0.upaiyun.com/iaas_paas_saas.jpg!small)
+![IAAS vs PAAS vs SaaS](https://tankywoo-wb.b0.upaiyun.com/iaas_paas_saas.jpg!small)
 
 `LXC` -- LinuX Container
 

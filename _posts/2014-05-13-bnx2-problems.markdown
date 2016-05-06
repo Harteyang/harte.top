@@ -15,9 +15,9 @@ categories: Ops
 
 其实最开始忘了看`dmesg`信息，如果看了就会发现里面很明显的报错提示了:
 
-![bnx2-1](http://tankywoo-wb.b0.upaiyun.com/bnx2-1.png!small)
+![bnx2-1](https://tankywoo-wb.b0.upaiyun.com/bnx2-1.png!small)
 
-![bnx2-2](http://tankywoo-wb.b0.upaiyun.com/bnx2-2.png!small)
+![bnx2-2](https://tankywoo-wb.b0.upaiyun.com/bnx2-2.png!small)
 
 然后根据提示把相应的模块放到指定位置，重启网络，如果还起不来，再继续看还需要哪些模块。
 

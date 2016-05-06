@@ -26,7 +26,7 @@ RELP是一个C/S模型, 提供了一种command-response模型, 客户端(client)
 
 如此图:
 
-![connect ok](http://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-connect.png)
+![connect ok](https://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-connect.png)
 
 但是如果server端没有响应, 则client会一直发送`open`命令.
 
@@ -34,7 +34,7 @@ RELP是一个C/S模型, 提供了一种command-response模型, 客户端(client)
 
 如此图:
 
-![server send rsp](http://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-send-ok.png)
+![server send rsp](https://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-send-ok.png)
 
 ---
 
@@ -52,7 +52,7 @@ RELP是一个C/S模型, 提供了一种command-response模型, 客户端(client)
 
 但是这个问题不好回溯, 刚好第二天再次出现了这个问题. 于是`strace`跟踪进程, 发现刷屏式的提示`too many open files`. 如图:
 
-![strace分析](http://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-strace-cap.png)
+![strace分析](https://tankywoo-wb.b0.upaiyun.com/rsyslog-relp-strace-cap.png)
 
 想到omprog处理imrelp收到的日志, 连接的节点太多, 每个节点都需要写入文件, 导致的这个问题.
 

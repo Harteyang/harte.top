@@ -17,11 +17,11 @@ categories: Linux
 
 PXE 整体的流程图(这两个算是把流程体现的比较清晰的):
 
-![dhcp流程图](http://tankywoo-wb.b0.upaiyun.com/pxe_process.png)
+![dhcp流程图](https://tankywoo-wb.b0.upaiyun.com/pxe_process.png)
 
 (图1)
 
-![dhcp流程图](http://tankywoo-wb.b0.upaiyun.com/pxe_process2.jpg) 
+![dhcp流程图](https://tankywoo-wb.b0.upaiyun.com/pxe_process2.jpg) 
 
 (图2)
 
@@ -78,7 +78,7 @@ DHCP服务器端使用67/udp，客户端使用68/udp。
 
 DHCP 的流程图:
 
-![dhcp流程图](http://tankywoo-wb.b0.upaiyun.com/dhcp_session.png!small) 
+![dhcp流程图](https://tankywoo-wb.b0.upaiyun.com/dhcp_session.png!small) 
 
 图片来至 [维基百科](http://zh.wikipedia.org/wiki/DHCP)
 
