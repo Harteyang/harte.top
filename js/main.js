@@ -25,7 +25,9 @@ $(document).ready(function () {
   // Blink engine detection
   var isBlink = (isChrome || isOpera) && !!window.CSS;
 
-  if (isSafari) {
+    // isSafari function only work for safari <= 9.0.3
+    // is.js support safari >= 10.0
+  if (isSafari || is.safari()) {
     $("body").css('font-family', 'Seravek');
   }
 });
