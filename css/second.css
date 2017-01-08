@@ -13,10 +13,12 @@
 html, body { height: 100%; }
 
 body {
-  font-size: 15px;
+  font-size: 14px;
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
-  line-height: 1.5em;
+  /* font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif; */
+  /* font-family: Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; */
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.6em;
   /* background-color: #95AFBA; */
   /* background-color: #333; */
   background-color: #eee;
@@ -89,11 +91,11 @@ hr {
 
 .site {
   text-align: justify;
-  width: 750px;
+  width: 800px;
   margin: 0 auto;
-  line-height: 1.5em;
+  line-height: 1.6em;
   padding: 1em 2em 2em 2em;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   /* background-color: #fbfffd; */
   background-color: #fff;
   margin: 2em auto;
@@ -111,7 +113,7 @@ hr {
 
 .title {
   display: inline-block;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
   font-size: 1em;
 }
 
@@ -168,6 +170,10 @@ text-decoration: underline;
 
 #pagetitle h2 {
   font-size: 19px;
+}
+
+.post h2 {
+  margin-top: 2em;
 }
 
 /* standard */
