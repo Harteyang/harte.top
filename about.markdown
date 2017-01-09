@@ -19,3 +19,17 @@ ID: **Tanky Woo**
 更多可以转到 [https://tankywoo.com](https://tankywoo.com)
 
 我的联系方式: <me@tankywoo.com>
+
+---
+
+2016-01-07:
+
+最近开始玩公众号, 主要是将博客的一些文章选择性的同步过去, 方便阅读.
+
+感兴趣的朋友欢迎订阅.
+
+
+<div class="gzh">
+  <p>公众号: <b>某人的随记</b></p>
+  <img src="https://tankywoo-wb.b0.upaiyun.com/qrcode_for_gh.jpg" />
+</div>

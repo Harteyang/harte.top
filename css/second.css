@@ -272,3 +272,17 @@ code {
 
 .bash::before { content: "bash" !important; }
 .python::before { content: "python" !important; }
+
+
+/*****************************************************************************/
+/*
+/* Other
+/*
+/*****************************************************************************/
+.gzh {
+  text-align: center;
+}
+
+.post p .gzh img {
+  width: auto;
+}
