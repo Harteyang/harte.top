@@ -18,7 +18,7 @@ ID: **Tanky Woo**
 
 更多可以转到 [https://tankywoo.com](https://tankywoo.com)
 
-我的联系方式: <me@tankywoo.com>
+我的联系方式(base64): `bWVAdGFua3l3b28uY29tCg==`
 
 ---
 
