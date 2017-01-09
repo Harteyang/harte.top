@@ -30,6 +30,6 @@ ID: **Tanky Woo**
 
 
 <div class="gzh">
-  <p>公众号: <b>某人的随记</b></p>
-  <img src="https://tankywoo-wb.b0.upaiyun.com/qrcode_for_gh.jpg" />
+  <img src="https://tankywoo-wb.b0.upaiyun.com/qrcode_for_gh.jpg" /><br />
+  公众号: <b>某人的随记</b>
 </div>

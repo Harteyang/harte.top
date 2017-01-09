@@ -9,12 +9,9 @@
         <link href="/favicon.png" rel="icon">
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
 
-{% if page.bootstrap %}
         <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
         <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-{% endif %}
-        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 
         <!-- Custom JS -->
         <script type="text/javascript" src="{{ site.baseurl }}/js/is.min.js"></script>
@@ -38,9 +35,33 @@
             <a class="extra" href="https://github.com/tankywoo">GITHUB</a>
             <a class="extra" href="/about.html">ABOUT</a>
             <a class="extra" href="/feed.xml">RSS</a>
+            <a class="extra" href="#" data-toggle="modal" data-target="#gzh">公众号</a>
           </div>
 
           {{ content }}
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="gzh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">公众号</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="gzh">
+                    <p>最近开始玩公众号, 主要是将博客的一些文章选择性的同步过去, 方便阅读.</p>
+                    <p>感兴趣的朋友欢迎订阅.</p>
+                    <img src="https://tankywoo-wb.b0.upaiyun.com/qrcode_for_gh.jpg" /><br />
+                    某人的随记
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="footer">
             <div class="contact">

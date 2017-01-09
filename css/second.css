@@ -10,6 +10,18 @@
   padding: 0;
 }
 
+/* Bootstrap Reset */
+h1, h2, h3 {
+  margin-top: unset;
+  font-weight: bold;
+  line-height: unset;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+
 html, body { height: 100%; }
 
 body {
@@ -91,7 +103,7 @@ hr {
 
 .site {
   text-align: justify;
-  width: 800px;
+  width: 856px;
   margin: 0 auto;
   line-height: 1.6em;
   padding: 1em 2em 2em 2em;
@@ -283,6 +295,7 @@ code {
   text-align: center;
 }
 
-.post p .gzh img {
-  width: auto;
+.gzh img {
+  border: 5px solid #eee;
+  margin-bottom: 3px
 }
