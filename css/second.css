@@ -17,8 +17,12 @@ h1, h2, h3 {
   line-height: unset;
 }
 
-h2 {
+h2, h3 {
   font-size: 1.5em;
+}
+
+blockquote {
+  font-size: 1em;
 }
 
 
@@ -184,8 +188,8 @@ text-decoration: underline;
   font-size: 19px;
 }
 
-.post h2 {
-  margin-top: 2em;
+.post h2, .post h3 {
+  margin-top: 1.6em;
 }
 
 /* standard */
