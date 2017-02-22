@@ -192,6 +192,10 @@ text-decoration: underline;
   margin-top: 1.6em;
 }
 
+.post p {
+  word-break: break-all;
+}
+
 /* standard */
 pre code {
     font-size: 1em;
@@ -238,7 +242,7 @@ code {
 }
 
 .post p code {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .post h1 {
