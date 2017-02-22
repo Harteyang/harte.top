@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ".gitignore file ignore itself"
+title: ".gitignore 文件忽略自身（奇葩问题）"
 date: 2013-11-29 13:31
 comments: true
 categories: Git

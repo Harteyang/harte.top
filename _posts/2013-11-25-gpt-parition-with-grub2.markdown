@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GPT Parition with grub2"
+title: "Grub2 GPT 分区相关"
 date: 2013-11-25 14:08
 comments: true
 categories: Linux

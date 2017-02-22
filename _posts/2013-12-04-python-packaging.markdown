@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Packaging"
+title: "Python Packaging 包相关瞎扯"
 date: 2013-12-04 21:23
 comments: true
 categories: Python

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux history Command"
+title: "Linux history 命令相关"
 date: 2013-11-26 03:12
 comments: true
 categories: Linux

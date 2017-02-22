@@ -10,7 +10,7 @@ date: 2016-05-16 15:00
 
 daemontools管理一个服务serviceA, run脚本:
 
-```sh
+```bash
 #!/bin/bash
 
 exec /opt/srv/mysrv.sh
@@ -18,7 +18,7 @@ exec /opt/srv/mysrv.sh
 
 /opt/srv/mysrv.sh脚本：
 
-```sh
+```bash
 #!/bin/bash
 
 # other statements...
@@ -45,7 +45,7 @@ ping tankywoo.com >> /tmp/srv.log
 
 使用`trap`命令来指定在接收到信号后做相应的动作。 ([可以看看这篇](http://man.linuxde.net/trap))
 
-```sh
+```bash
 #!/bin/bash
 
 # other statements...
@@ -63,7 +63,7 @@ ping tankywoo.com >> /tmp/srv.log
 
 换个更简单的例子，run脚本：
 
-```sh
+```bash
 #!/bin/bash
 
 ping tankywoo.com >> /tmp/srv.log
@@ -75,7 +75,7 @@ ping tankywoo.com >> /tmp/srv.log
 
 所以这里的最简单的解决办法就是在/opt/srv/mysrv.sh中也使用exec：
 
-```sh
+```bash
 #!/bin/bash
 
 # other statements...
@@ -87,7 +87,7 @@ exec ping tankywoo.com >> /tmp/srv.log
 
 /opt/srv/mysrv.sh改为：
 
-```sh
+```bash
 #!/bin/bash
 
 # other statements...

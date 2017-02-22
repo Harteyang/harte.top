@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Clean Code Read Note"
+title: "读《代码整洁之道》"
 date: 2014-01-22 23:09
 comments: true
 categories: Code
@@ -8,7 +8,7 @@ categories: Code
 
 <!-- more -->
 
-前阵子找 [Jerry](http://www.perfect-is-shit.com)借了《Clean Code》，这两天抽时间简单过了一遍，把对自己有用的记录一下。
+前阵子找 [Jerry](http://www.perfect-is-shit.com) 借了《Clean Code》，这两天抽时间简单过了一遍，把对自己有用的记录一下。
 
 首先很喜欢第一章1.2节最后提到的勒布朗(LeBlanc)法则：
 

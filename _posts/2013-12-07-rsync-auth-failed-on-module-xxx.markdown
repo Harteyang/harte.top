@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "rsync auth failed on module xxx"
+title: "rsync auth failed on module xxx 问题总结"
 date: 2013-12-07 12:25
 comments: true
 categories: Linux

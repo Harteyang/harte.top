@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A Problem About Python str.strip"
+title: "Python str.strip() 的问题"
 date: 2013-11-19 23:19
 comments: true
 categories: Python

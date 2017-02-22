@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "use lvm"
+title: "Linux LVM 相关"
 date: 2013-12-12 16:18
 comments: true
 categories: Linux

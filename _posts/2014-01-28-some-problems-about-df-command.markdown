@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Some Problems About df Command"
+title: "关于 df 命令的几个问题"
 date: 2014-01-28 09:51
 comments: true
 categories: Linux

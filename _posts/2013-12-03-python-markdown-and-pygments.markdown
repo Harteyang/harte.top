@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python-Markdown and Pygments"
+title: "Python-Markdown 和 Pygments 无法高亮问题"
 date: 2013-12-03 22:06
 comments: true
 categories: Python

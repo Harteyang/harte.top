@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A problem by arp_filter"
+title: "一个 arp_filter 的问题"
 date: 2013-10-29 17:14
 comments: true
 categories: Linux

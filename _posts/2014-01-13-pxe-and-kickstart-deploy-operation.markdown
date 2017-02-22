@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PXE and Kickstart Deploy Operation"
+title: "PXE 和 Kickstart 部署记录"
 date: 2014-01-13 14:46
 comments: true
 categories: Linux
