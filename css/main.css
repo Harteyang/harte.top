@@ -151,7 +151,7 @@ hr {
   color: #8085C1;
 }
 
-.footer .license {
+.footer .license, .footer .beian {
   float: left;
   padding-top: 1em;
 }
