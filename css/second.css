@@ -234,6 +234,7 @@ code {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  border: unset;
 }
 
 .post ul, .post ol {
@@ -281,13 +282,14 @@ code {
   display: inline;
   content: "text";
   position: absolute;
-  background: white;
+  /* background: white; */
   top: 0px;
   right: 0px;
   padding: 3px;
-  border-left: 1px solid silver;
-  border-bottom: 1px solid silver;
-  font-style: oblique;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  color: silver;
+  /* font-style: oblique; */
 }
 
 .bash::before { content: "bash" !important; }
