@@ -11,6 +11,7 @@
 }
 
 /* Bootstrap Reset */
+/*
 h1, h2, h3 {
   margin-top: unset;
   font-weight: bold;
@@ -19,6 +20,16 @@ h1, h2, h3 {
 
 h2, h3 {
   font-size: 1.5em;
+}
+*/
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.45em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 blockquote {
@@ -41,11 +52,13 @@ body {
   text-align: center;
 }
 
+/*
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1em;
 }
+*/
 
-p { margin-bottom: 1em; }
+/* p { margin-bottom: 1em; } */
 
 a         { color: #296bcc; }
 a:link    { text-decoration: underline; }
@@ -110,7 +123,7 @@ hr {
   width: 856px;
   margin: 0 auto;
   line-height: 1.6em;
-  padding: 1em 2em 2em 2em;
+  padding: 0 2em 1em 2em;
   /* border: 1px solid #ddd; */
   /* background-color: #fbfffd; */
   background-color: #fff;
@@ -146,7 +159,7 @@ text-decoration: underline;
 }
 
 .meta {
-	color: rgb(46, 65, 92);
+	color: silver;
   text-align: center;
 }
 
@@ -184,6 +197,7 @@ text-decoration: underline;
   text-align: center;
 }
 
+/*
 #pagetitle h2 {
   font-size: 19px;
 }
@@ -191,6 +205,7 @@ text-decoration: underline;
 .post h2, .post h3 {
   margin-top: 1.6em;
 }
+*/
 
 .post p {
   word-break: break-all;
@@ -256,6 +271,15 @@ code {
   width: 100%;
 }
 
+.post p::selection{
+    background: blue;
+    color: #FFFFFF;
+}
+.post p::-moz-selection{  /* Firefox */
+    background: blue;
+    color: #FFFFFF;
+}
+
 /*****************************************************************************/
 /*
 /* Reset Syntax color
@@ -265,10 +289,12 @@ code {
 .highlight  { background: #fbfffd; }
 
 /* add scrollbar if code too long */
+/*
 .highlight pre {
   max-height: 300px;
   overflow-y: auto;
 }
+*/
 
 /******/
 
