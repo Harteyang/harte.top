@@ -156,3 +156,24 @@ FILES_COMMAND = 'git ls-files'
 ```
 
 OK，这个问题算圆满解决了，目前来看，针对 `submodule`，只能在 `MANIFEST` 中将其手动排除，但是子模块初始化后里面的文件要 `recursive-include` 进来。
+
+---
+
+*2017-02-26 补充：*
+
+基于上面的现象，发现在自己的 Mac 环境下和 Gentoo 环境下得到的 SOURCES.txt 结果不一样，在 Mac 下打包的元信息里还是只包括以前的那些文件，并没有从 `git ls-files` 中获取。
+
+排查后发现是 `setuptools_scm` 这个包在 Mac开发机上没有装。
+
+Gentoo 下 `setuptools_scm` 被装上是因为 `bpython` 这个包通过 `emerge` 安装时，中间有多层依赖，最终有个包依赖 `setuptools_scm` 从而导致其装上。
+
+因为我的 simiki 开发环境是通过 virtualenv 创建的，有个选项 `--no-site-packages`，以前 virtualenv 创建虚拟环境时，默认是包括系统的包，即 `--system-site-packages`， 后面 `--no-site-packages` 被标记弃用并置位默认选项，表示不链接系统上装的 python 包。
+
+这样相当于我的开发虚拟环境是没有 `setuptools_scm` 这个包了。
+
+刚去 Github 上看了一些知名的项目，没有看到有针对这个问题的处理，如 Tornado 也是手动指定一堆文件去 include，flask 也是类似。
+
+个人考虑为了杜绝这种奇葩的现象：
+
+1. 显式的 exclude 不需要打包进去的文件，如 `.coveragerc`，`.travis.yml` 等
+2. 先打包不要上传，看看都有哪些文件，检查一下
