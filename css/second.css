@@ -185,7 +185,11 @@ text-decoration: underline;
 .footer-left {
   float: left;
   padding-top: 1em;
-  line-height: 0.5em;
+}
+
+.license p {
+  margin: 0;
+  line-height: 1em;
 }
 
 /*****************************************************************************/
