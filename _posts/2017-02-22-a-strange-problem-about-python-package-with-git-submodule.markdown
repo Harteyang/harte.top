@@ -165,6 +165,8 @@ OK，这个问题算圆满解决了，目前来看，针对 `submodule`，只能
 
 排查后发现是 `setuptools_scm` 这个包在 Mac开发机上没有装。
 
+先前没多想，还以为 `setuptools_scm` 是 `setuptools` 的一个依赖包，是必装的……
+
 Gentoo 下 `setuptools_scm` 被装上是因为 `bpython` 这个包通过 `emerge` 安装时，中间有多层依赖，最终有个包依赖 `setuptools_scm` 从而导致其装上。
 
 因为我的 simiki 开发环境是通过 virtualenv 创建的，有个选项 `--no-site-packages`，以前 virtualenv 创建虚拟环境时，默认是包括系统的包，即 `--system-site-packages`， 后面 `--no-site-packages` 被标记弃用并置位默认选项，表示不链接系统上装的 python 包。
