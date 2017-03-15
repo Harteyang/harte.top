@@ -53,3 +53,19 @@ xn--0zwm56d.com
 ```python
 os.putenv('LC_CTYPE', 'en_US.utf-8')
 ```
+
+---
+
+补充：
+
+再看了下文档：
+
+> os.putenv(varname, value)
+
+> When putenv() is supported, assignments to items in os.environ are automatically translated into corresponding calls to putenv(); however, calls to putenv() don’t update os.environ, so it is actually preferable to assign to items of os.environ.
+
+建议还是直接修改 `os.environ`：
+
+```python
+os.environ['LC_CTYPE'] = 'en_US.utf-8'
+```
