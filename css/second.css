@@ -274,7 +274,9 @@ code {
 }
 
 .post p img {
-  width: 100%;
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
 }
 
 .post p::selection{
