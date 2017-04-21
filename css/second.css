@@ -1,7 +1,5 @@
 /*****************************************************************************/
-/*
 /* Common
-/*
 /*****************************************************************************/
 
 /* Global Reset */
@@ -39,40 +37,7 @@ a:active   { color: #296bcc; }
 
 
 /*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.posts {
-  list-style-type: square;
-  margin-bottom: 2em;
-}
-
-.posts li {
-	line-height: 2em;
-	padding: 2px 0;
-	margin-bottom: -1px;
-	overflow: hidden;
-}
-
-.posts span.post_date {
-  color: #aaa;
-  font-family: "Courier New", monospace;
-  float: right;
-  font-size: 0.9em;
-}
-
-.posts a {
-    color: rgb(46, 65, 92);
-    font-weight: 550;
-}
-.posts a:link { text-decoration: none; }
-.posts a:visited { text-decoration: none; }
-
-/*****************************************************************************/
-/*
 /* Site
-/*
 /*****************************************************************************/
 
 .site {
@@ -126,10 +91,35 @@ a:active   { color: #296bcc; }
   color: #296bcc;
 }
 
+.posts {
+  list-style-type: square;
+  margin-bottom: 2em;
+}
+
+.posts li {
+	line-height: 2em;
+	padding: 2px 0;
+	margin-bottom: -1px;
+	overflow: hidden;
+}
+
+.posts span.post_date {
+  color: #aaa;
+  font-family: "Courier New", monospace;
+  float: right;
+  font-size: 0.9em;
+}
+
+.posts a {
+    color: rgb(46, 65, 92);
+    font-weight: 550;
+}
+.posts a:link { text-decoration: none; }
+.posts a:visited { text-decoration: none; }
+
+
 /*****************************************************************************/
-/*
 /* Posts
-/*
 /*****************************************************************************/
 #pagetitle {
   color: rgb(46, 65, 92);
@@ -145,7 +135,6 @@ a:active   { color: #296bcc; }
 #pagetitle .meta {
   float: right;
 }
-
 
 .post p {
   word-break: break-all;
@@ -211,9 +200,7 @@ code {
 
 
 /*****************************************************************************/
-/*
 /* Reset Syntax color
-/*
 /*****************************************************************************/
 /* for colorful */
 .highlight  { background: #fbfffd; }
@@ -226,7 +213,6 @@ code {
   display: inline;
   content: "text";
   position: absolute;
-  /* background: white; */
   top: 0px;
   right: 0px;
   padding: 3px;
@@ -240,9 +226,7 @@ code {
 
 
 /*****************************************************************************/
-/*
 /* Other
-/*
 /*****************************************************************************/
 .gzh {
   text-align: center;
