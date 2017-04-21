@@ -21,72 +21,30 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/colorful.css">
 
         <!-- Custom CSS -->
-        <!-- <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"> -->
         <link rel="stylesheet" href="{{ site.baseurl }}/css/second.css">
-
     </head>
     <body>
 
-        <div class="site">
           <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">HOME</a>
-            <a class="extra" href="http://wiki.tankywoo.com/">WIKI</a>
-            <a class="extra" href="https://github.com/tankywoo">GITHUB</a>
-            <a class="extra" href="/about.html">ABOUT</a>
-            <a class="extra" href="/feed.xml">RSS</a>
-            <a class="extra" href="#" data-toggle="modal" data-target="#gzh">公众号</a>
+            <span class="title"><a href="/">{{ site.name }}</a></span>
+            &#47;&nbsp;<a class="extra" href="/about.html">ABOUT</a>
+            &#47;&nbsp;<a class="extra" href="/feed.xml">RSS</a>
           </div>
+
+        <div class="site">
 
           {{ content }}
 
+        </div>
 
-          <!-- Modal -->
-          <div class="modal fade" id="gzh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title" id="myModalLabel">公众号</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="gzh">
-                    <p>最近开始玩公众号, 主要是将博客的一些文章选择性的同步过去, 方便阅读.</p>
-                    <p>感兴趣的朋友欢迎订阅.</p>
-                    <img src="https://tankywoo-wb.b0.upaiyun.com/qrcode_for_gh.jpg" /><br />
-                    某人的随记
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-              Tanky Woo <<a href="mailto:me@tankywoo.com">me@tankywoo.com</a>>
-              </p>
-            </div>
-            <div class="footer-left">
-              <div class="license">
-                <p>
-                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"></a>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-                </p>
-              </div>
-              <div class="beian">
-                <p><a href="http://www.miitbeian.gov.cn/"></a></p>
-              </div>
-            </div>
-          </div>
+        <div class="footer">
+          <p><a href="http://www.miitbeian.gov.cn/">京ICP备16016622号</a></p>
         </div>
 
 <script type="text/javascript">
     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
     document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6f8eefe3f13b327ada7a7406d2af3232' type='text/javascript'%3E%3C/script%3E"));
 </script>
-
 
     </body>
 </html>
