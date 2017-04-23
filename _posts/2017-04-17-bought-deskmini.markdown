@@ -40,6 +40,6 @@ CPU 本来准备某宝入散片，后来感觉散片加大家都推荐的风扇 
 
 ![DeskMini 和 KPW 对比](https://tankywoo-wb.b0.upaiyun.com/deskmini/deskmini-2.jpeg)
 
-![DeskMini 和 KPW 对比](https://tankywoo-wb.b0.upaiyun.com/deskmini/deskmini-3.jpeg)
+<!-- ![DeskMini 和 KPW 对比](https://tankywoo-wb.b0.upaiyun.com/deskmini/deskmini-3.jpeg) -->
 
 如果有兴趣的朋友，不妨入一个玩玩，价格不贵，可玩性也高点，个人还是挺推荐的。
