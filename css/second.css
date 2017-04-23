@@ -62,7 +62,7 @@ a:active   { color: #296bcc; }
 }
 
 .header a, .footer a {
-  color: #999;
+  color: #ccc;
   text-decoration: none;
 }
 
@@ -75,11 +75,6 @@ a:active   { color: #296bcc; }
 
 .header a.extra:hover {
   text-decoration: underline;
-}
-
-.meta {
-	color: silver;
-  text-align: center;
 }
 
 .index_recent {
@@ -133,6 +128,7 @@ a:active   { color: #296bcc; }
 }
 
 #pagetitle .meta {
+  color: #ccc;
   float: right;
 }
 
@@ -193,7 +189,7 @@ code {
 }
 
 .post p img {
-  max-width: 60%;
+  max-width: 81%;
   display: block;
   margin: 0 auto;
 }
