@@ -66,6 +66,10 @@ a:active   { color: #296bcc; }
   text-decoration: none;
 }
 
+.header a:hover {
+  color: #999;
+}
+
 .title {
   display: inline-block;
   font-size: 1em;
