@@ -97,7 +97,7 @@ tankywoo $ ls -al /proc/16282
 ls: cannot open directory '/proc/16282': Operation not permitted
 ```
 
-### Why the files under /proc/[pid] owns to root?
+### Why are the files under /proc/[pid] owned by root?
 
 As the result list above, files under /proc/16282 owns to root, not tankywoo.
 
