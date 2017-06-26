@@ -221,8 +221,10 @@ code {
   color: silver;
 }
 
+.c::before { content: "c" !important; }
 .bash::before { content: "bash" !important; }
 .python::before { content: "python" !important; }
+.diff::before { content: "diff" !important; }
 
 
 /*****************************************************************************/

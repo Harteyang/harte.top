@@ -100,3 +100,49 @@ GenerateLocalHostNameProperty(void)
 这块不知道作者为何非要去给主机名做一个解析，还有就是理顺了这块的逻辑，还是不清楚最开始的问题，为何只有个别机器在启动时没有获取主机，我将 `/etc/init/rsyslog.conf` 启动加上了 `-d` 开启 DEBUG 并设置 `RSYSLOG_DEBUGLOG` 环境变量指定 DEBUG 日志，看到也是 `getaddrinfo: Name or service not known`，但是实际上在 DNS 服务器上抓包看到有 DNS 解析并返回记录了。
 
 目前只能先设置 `$LocalHostName` 来解决了。
+
+---
+
+2017-06-26 补充：
+
+因为想起来 Gentoo 下 rsyslog 的版本还是挺新的，然后看了下，稳定版是 `v8.26.0` 的版本（而 Ubuntu PPA 源最新版是 `v8.27.0` 版本），看了下这个版本的代码，是没有引入之前 `getaddrinfo` 的问题，这个版本使用 `gethostbyname()` 来解析，如果失败则直接将 FQDN 置为 `gethostname()` 获取的主机名；在 `v8.27.0` 下如果 `getaddrinfo()` 失败后则直接退出不再进行后面的操作。
+
+然后我又将 Gentoo 下的 rsyslog 升级到 `v8.27.0` 这个非稳定版，奇怪的是主机名正常！最后排查 ebuild 文件发现 Gentoo 官方额外有一个 patch 专门修复这个问题：
+
+```diff
+$ cat /usr/portage/app-admin/rsyslog/files/8-stable/rsyslog-8.27.0-fix-hostname-detection-when-getaddrinfo-fails.patch
+From 1a7d3a088969b47798bc1da712ca2772f91a7c02 Mon Sep 17 00:00:00 2001
+From: Jiri Vymazal <jvymazal@redhat.com>
+Date: Wed, 31 May 2017 16:26:56 +0200
+Subject: [PATCH] Ignoring NONAME error from getaddrinfo so we have hostname
+ set even without working network
+
+---
+ runtime/net.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/runtime/net.c b/runtime/net.c
+index 2d8de9429..edffc677a 100644
+--- a/runtime/net.c
++++ b/runtime/net.c
+@@ -1188,7 +1188,11 @@ getLocalHostname(uchar **ppName)
+                memset(&flags, 0, sizeof(flags));
+                flags.ai_flags = AI_CANONNAME;
+                int error = getaddrinfo((char*)hnbuf, NULL, &flags, &res);
+-               if (error != 0) {
++               if (error != 0 &&
++                   error != EAI_NONAME && error != EAI_AGAIN && error != EAI_FAIL) {
++                       /* If we get one of errors above, network is probably
++                        * not working yet, so we fall back to local hostname below
++                        */
+                        dbgprintf("getaddrinfo: %s\n", gai_strerror(error));
+                        ABORT_FINALIZE(RS_RET_IO_ERROR);
+                }
+
+```
+
+赞！
+
+然后我又瞄了下 Github rsyslog master 分支的原因，[目前这个问题也修复了](https://github.com/rsyslog/rsyslog/commit/1a7d3a088969b47798bc1da712ca2772f91a7c02)（当初直接看的 v8.27.0 分支，忽略了最新的代码）。
+
+估计下一个版本就会包含修复这个问题。
