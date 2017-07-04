@@ -2,6 +2,8 @@
 layout: post
 title: "天津一日游"
 date: 2017-06-18 19:00
+categories: 公众号
+display: true
 comments: true
 ---
 

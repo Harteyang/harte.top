@@ -2,8 +2,10 @@
 layout: post
 title: "排查 locale 和 IDN 域名的问题"
 date: 2017-03-14 16:00
-comments: true
 tags: Troubleshooting
+categories: 公众号
+display: true
+comments: true
 ---
 
 

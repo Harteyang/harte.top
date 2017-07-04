@@ -2,6 +2,8 @@
 layout: post
 title: "Python 终端下中文字符对齐处理和编码续"
 date: 2017-01-21 21:00
+categories: 公众号
+display: true
 comments: true
 ---
 

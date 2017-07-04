@@ -2,8 +2,10 @@
 layout: post
 title: "排查Python打包时发布文件列表对Git子模块的奇怪行为"
 date: 2017-02-22 22:00
-comments: true
 tags: Python,Troubleshooting
+categories: 公众号
+display: true
+comments: true
 ---
 
 
