@@ -4,3 +4,4 @@ url: "http://blog.tankywoo.com"
 markdown: redcarpet
 highlighter: pygments
 exclude: ["fabfile.py*", "*.bak"]
+permalink: /:year/:month/:day/:title.html
