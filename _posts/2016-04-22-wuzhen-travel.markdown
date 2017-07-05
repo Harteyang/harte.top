@@ -55,6 +55,7 @@ date: 2016-04-25 22:00
 西栅更符合我的口味，东栅的文化景点太文艺，他们几个家伙都是这类人，我还是喜欢一些自然风景：
 
 ![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-7.jpg)
+
 ![](https://tankywoo-wb.b0.upaiyun.com/wuzhen/wuzhen-8.jpg)
 
 白莲塔寺（不过貌似和那啥没关系）：

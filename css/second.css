@@ -206,7 +206,7 @@ code {
 }
 
 .post p img {
-  max-width: 81%;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
 }
