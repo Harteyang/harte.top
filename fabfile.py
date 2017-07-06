@@ -2,12 +2,13 @@ from fabric.api import env
 from fabric.colors import blue, red
 import fabric.contrib.project as project
 
-env.hosts = ["192.81.133.96"]
+env.hosts = ["blog.tankywoo.com"]
 env.user = "root"
 env.colorize_errors = True
 env.local_output = "_site/"
 env.remote_output = "/opt/blog.tankywoo.com/"
 env.rsync_delete = False
+
 
 def deploy():
     if not env.remote_output:
