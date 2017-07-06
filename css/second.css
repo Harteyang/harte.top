@@ -9,11 +9,15 @@
 }
 
 h1 { font-size: 2em; }
-h2 { font-size: 1.75em; }
-h3 { font-size: 1.45em; }
-h4 { font-size: 1.25em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
 h5 { font-size: 1.1em; }
 h6 { font-size: 1em; }
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 0.75em;
+  font-weight: bold;
+}
 
 blockquote {
   font-size: 1em;
@@ -44,7 +48,7 @@ a:active   { color: #296bcc; }
   text-align: justify;
   max-width: 856px;
   margin: 0 auto;
-  line-height: 1.6em;
+  line-height: 1.75em;
   padding: 1em 2em;
   background-color: #fff;
   margin: 1em auto;
@@ -127,8 +131,8 @@ div#home {
 #pagetitle {
   color: rgb(46, 65, 92);
   border-bottom: 1px solid #ddd;
-  margin: 1em 0;
-  padding-bottom: 0.5em;
+  margin: 1em 0 2em 0;
+  padding-bottom: 1em;
 }
 
 #pagetitle .page_title {
@@ -147,6 +151,11 @@ div#home {
 
 #pagetitle .meta {
   color: #ccc;
+}
+
+#pagetitle h1 {
+  font-size: 1.6em;
+  font-weight: 500;
 }
 
 .post p {
