@@ -5,7 +5,7 @@ date: 2017-06-20 20:30
 comments: true
 ---
 
-### Problem Description
+## Problem Description
 
 In my [dotfiles](https://github.com/tankywoo/dotfiles/blob/master/.common/other.sh#L27-L48), when I start a new bash login shell, I will check if a ssh-agent is already started, if not, start a new ssh-agent:
 
@@ -45,7 +45,7 @@ redis-cli -h x.x.x.x -a <password string>
 It's obvious that as a common permission user, I can also see other people's process with command line, if someone write password in the command line, not in interactive mode, it is insecure.
 
 
-### Resolve the process list isolation
+## Resolve the process list isolation
 
 The solution is **mount with option `hidepid`**.
 
@@ -97,7 +97,7 @@ tankywoo $ ls -al /proc/16282
 ls: cannot open directory '/proc/16282': Operation not permitted
 ```
 
-### Why are the files under /proc/[pid] owned by root?
+## Why are the files under /proc/[pid] owned by root?
 
 As the result list above, files under /proc/16282 owns to root, not tankywoo.
 
@@ -181,14 +181,14 @@ platform_disable_tracing(int strict)
 Refer to the man document, `prctl(PR_SET_DUMPABLE, 0)` cause the files under `/proc/[pid]` owned by user root.
 
 
-### Why I can't view `/proc/[pid]` of ssh-agent?
+## Why I can't view `/proc/[pid]` of ssh-agent?
 
 From `man 2 ptrace`, it list the algorithm of access to /proc/[pid]:
 
 > 4.  Deny access if the target process "dumpable" attribute has a value other than 1 (`SUID_DUMP_USER`; see the discussion of `PR_SET_DUMPABLE` in prctl(2)), and the caller does not have the `CAP_SYS_PTRACE` capability in the user namespace of the target process.
 
 
-### How to resolve the deny access of ssh-agent?
+## How to resolve the deny access of ssh-agent?
 
 No solution I can think of at the moment...
 

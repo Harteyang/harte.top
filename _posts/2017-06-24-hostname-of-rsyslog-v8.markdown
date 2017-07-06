@@ -12,7 +12,7 @@ rsyslog 是我到现在为止，troubleshooting 次数算相当多的一个工�
 昨天下午排查这个问题把脑袋都搞疼了。
 
 
-### 问题描述
+## 问题描述
 
 Ubuntu 12.04 下，官方源稳定的 rsyslog 版本是 5.8.6。现在 rsyslog 已经逐步稳定到 v8 版本了。所以前一阵子将一些系统都通过 PPA 源升级到 v8 版本了。
 
@@ -34,7 +34,7 @@ $template TraditionalFileFormat,"%TIMESTAMP% %HOSTNAME% %syslogtag%%msg:::sp-if-
 
 目前主要定位在普遍情况下 v8 版本使用 `[localhost]` 的原因。
 
-### 定位问题
+## 定位问题
 
 在 v5 版本下，我重来没见过这个问题，但是在 v8 下，个别机器出现了。
 

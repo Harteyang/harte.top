@@ -38,7 +38,7 @@ categories: Linux
 
 三个工具:
 
-### cpufreq-info ###
+## cpufreq-info ##
 
 用于查看cpu的相关信息。
 
@@ -79,7 +79,7 @@ categories: Linux
 > Ondemand降频更加激进，conservative降频比较缓慢保守，事实使用ondemand的效果也是比较好的。
 
 
-### cpufreq-set ###
+## cpufreq-set ##
 
 修改CPU的频率配置
 
@@ -111,7 +111,7 @@ categories: Linux
 
 因为在 `available frequency steps` 里并没有 3.0GHz，所以会自动使用偏上的3.1GHz
 
-### cpufreq-aperf ###
+## cpufreq-aperf ##
 
 需要加载`cpuid`和`msr`两个内核模块:
 

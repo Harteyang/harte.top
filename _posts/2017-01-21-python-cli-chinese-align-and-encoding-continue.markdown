@@ -18,7 +18,7 @@ comments: true
 先谈谈终端下中文字符（宽字符）的对齐输出问题：
 
 
-### 终端下中文字符（宽字符）的对齐输出问题
+## 终端下中文字符（宽字符）的对齐输出问题
 
 比如我在终端下输出表格，里面包含了中英文，因为中英文的长度不一致，`len()`获取的宽度是编码字节的长度，不是实际长度：
 
@@ -71,14 +71,14 @@ print(fmt_str3.format(s3))
 
 然后就是开始字符编码的各种风暴了……
 
-### Terminal Emulator Character Encoding and $LANG
+## Terminal Emulator Character Encoding and $LANG
 
 比如 Mac 下我使用的 Terminal 是 iTerm2, 终端的字符编码设置在`Profiles -> Terminal -> Character Encoding`，选择的是`Unicode (UTF-8)`。
 
 `$LANG`设置是`zh_CN.UTF-8`, `zh_CN` 表示语言，即这里的中文，`UTF-8` 也就是编码集。终端显示的一些结果，如`ls`, `date`的输出、vim 的提示都是中文。
 
 
-### locale 相关
+## locale 相关
 
 关于`locale`输出各字段的含义，在`man 7 locale`中有解释。
 
@@ -101,7 +101,7 @@ print(fmt_str3.format(s3))
 * [Ubuntu 国际化与本土化](http://wp.fungo.me/linux/ubuntu-i18n-l10n.html)
 
 
-### 再说 Python Source Code Encodings
+## 再说 Python Source Code Encodings
 
 在 [Python Encoding]({{ site.baseurl }}{% post_url 2015-01-21-python-encoding %}) 提到过这个，这里再补充下。
 
@@ -133,7 +133,7 @@ print(a.decode('gb2312').encode('gb2312'))
 需要设置终端编码是 gb2312，否则输出是乱码。
 
 
-### Python sys.getdefaultencoding()
+## Python sys.getdefaultencoding()
 
 Python 2.x 下，默认是 ascii，这个与系统环境无关。
 
@@ -161,7 +161,7 @@ a = '中文'.decode(sys.getdefaultencoding()) + u'abc'
 ```
 
 
-### In vim, encoding vs fileencoding vs fileencodings
+## In vim, encoding vs fileencoding vs fileencodings
 
 注意 fileencoding 和 fileencodings 区别，一个是单数，一个是复数。
 
@@ -199,13 +199,13 @@ set fileencodings=utf-8,gb2312
 这块目前还不清楚原因，只能猜测是因为终端字符集和 encoding buffer 这块有关，虽然设置的 gb2312，但是实际是终端的 utf-8，但是因为和 fileencoding 一样设置的 gb2312，所以不做转码。
 
 
-### 总结一下
+## 总结一下
 
 * 万能的 UTF-8 大法好
 * 不要设置不一致，从终端到程序配置都统一为 UTF-8
 
 
-### 其它参考
+## 其它参考
 
 * [UTF-8 and Unicode FAQ for Unix/Linux](https://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8)
 * [Effect of $LANG on terminal](http://unix.stackexchange.com/questions/48689/effect-of-lang-on-terminal)

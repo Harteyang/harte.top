@@ -41,7 +41,7 @@ categories: Nagios
 
 快速扫完这本书，也学到了一些东西，在网上简单了解了下这些东西，还未做尝试(所以可能有误)，先简单记录下：
 
-### 开发脚本模板(P72) ###
+## 开发脚本模板(P72) ##
 
 第五章第一节，提到了 **开发脚本模板**，先开始还没看明白是什么，后来发现是一个模板技巧(经验):
 
@@ -85,7 +85,7 @@ categories: Nagios
 		sed -e "s/NAME/$NAME/" -e "s/DOMAIN/$DOMAIN/" hosts.skel >> hosts.cfg
 	done
 
-### 第七章 Nagios的一些扩展(P129) ###
+## 第七章 Nagios的一些扩展(P129) ##
 
 介绍了一些Nagios的优化和调整经验。
 
@@ -99,7 +99,7 @@ categories: Nagios
 
 这一块的内容还需要进一步的了解学习。**TODO**
 
-### NRPE(P105) ###
+## NRPE(P105) ##
 
 [NRPE](http://exchange.nagios.org/directory/Addons/Monitoring-Agents/NRPE--2D-Nagios-Remote-Plugin-Executor/details)(Nagios Remote Plugin Executor) 官方介绍和原理图:
 
@@ -115,7 +115,7 @@ NRPE是一个轻量级的C/S系统，通过它Nagios服务器可以执行存放�
 
 这种方式也可以降低监控端主机的运行压力。
 
-### Check MK(P114) ###
+## Check MK(P114) ##
 
 ![Check MK 原理图](https://tankywoo-wb.b0.upaiyun.com/nagios_check_mk.png)
 
@@ -125,7 +125,7 @@ NRPE是一个轻量级的C/S系统，通过它Nagios服务器可以执行存放�
 
 一篇不错的文章: [手把手打造开源新监控利器check\_mk](http://grass51.blog.51cto.com/4356355/994819)
 
-### NagiosQL(P77) ###
+## NagiosQL(P77) ##
 
 [NagiosQL](http://www.nagiosql.org/) 是一个基于Web的Nagios配置工具。这个就没去了解了，基于web去配置还是没有纯文本编辑来的快捷。。。
 
