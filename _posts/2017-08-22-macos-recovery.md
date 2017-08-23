@@ -86,6 +86,12 @@ drwxr-xr-x@ 32 TankyWoo  staff   1.1K Jul  3 10:41 mydir
 
 因为复制文件时习惯性的保留所有权限，所以通过 `cp -a` 拷贝的 TimeMachine 数据，`-a` 会保留一样的扩展属性和ACL，改为 `cp -r` 即可。或者通过上面给的 `rsync` 命令，貌似 Mac 下 rsync 也没有支持保留扩展属性的参数。
 
+清除目录或文件的ACL：
+
+```
+chmod [-R] -N <dir_or_file>
+```
+
 另外，如 `ls -@l` 看到的这些属性，和 TimeMachine 相关，比较碍眼，可以通过 `xattr -d` 删除：
 
 ```
