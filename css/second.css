@@ -119,7 +119,6 @@ div#home {
 
 .posts a {
     color: rgb(46, 65, 92);
-    font-weight: 550;
 }
 .posts a:link { text-decoration: none; }
 .posts a:visited { text-decoration: none; }
