@@ -14,7 +14,8 @@ html, body { height: 100%; }
 
 body {
   font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
+  font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
   line-height: 1.5em;
   background-color: #95AFBA;
   text-align: center;

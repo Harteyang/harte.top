@@ -32,7 +32,7 @@ date: 2015-01-11 16:10
 
 测试脚本:
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Tanky Woo @ 2015-01-11
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 		open_without_U(fn)
 		open_with_U(fn)
 		print('')
-{% endhighlight %}
+```
 
 测试结果:
 

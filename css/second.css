@@ -259,3 +259,8 @@ code {
   border: 5px solid #eee;
   margin-bottom: 3px
 }
+
+.gzh-pic {
+  font-size: 13px;
+  color: #ccc;
+}

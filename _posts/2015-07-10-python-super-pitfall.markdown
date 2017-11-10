@@ -14,16 +14,16 @@ date: 2015-07-10 00:00
 
 注意super只能用在新式类(new-style class)中, 也就是继承自object类对象的子类:
 
-{% highlight python %}
+```python
 class A(object):
 	....
-{% endhighlight %}
+```
 
 以前遇到过一个问题, 排查了半天, 才发现是老式类定义.
 
 传统的super使用方法如:
 
-{% highlight python %}
+```python
 class Base(object):
 	def __init__(self, id):
 		self.id = id
@@ -32,16 +32,16 @@ class Child(Base):
 	def __init__(self, id, name):
 		super(Child, self).__init__(id)
 		self.name = name
-{% endhighlight %}
+```
 
 这个是Python2.2之后才支持的特性, 在之前只能:
 
-{% highlight python %}
+```python
 class Child(Base):
 	def __init__(self, id, name):
 		Base.__init__(self, id)
 		self.name = name
-{% endhighlight %}
+```
 
 这样做的好处就是不需要显示的在初始化时指明Child的父类名是什么, 在复杂的继承环境下, 以致会牵一发动一身.
 
@@ -57,9 +57,9 @@ super在多继承这种更复杂的环境下, 才能发挥真正的威力, 这�
 
 里面提到了这个用法:
 
-{% highlight python %}
+```python
 super(self.__class__, self).__init__()
-{% endhighlight %}
+```
 
 关于`__class__`:
 
@@ -67,12 +67,12 @@ super(self.__class__, self).__init__()
 
 因为前阵子在使用多线程(`threading.Thread`)时, 写了一个基类, 然后有两个类分别继承自这个基类, 设置线程名就是类名, 这时就用到了`__class__`:
 
-{% highlight python %}
+```python
 class base_thread(threading.Thread):
 	def __init__(self, **kwargs):
 		threading.Thread.__init__(self)
 		self.name = self.__class__.__name__
-{% endhighlight %}
+```
 
 所以对这个比较敏感, 才留意了下这个回答, 没想到却发现了一些坑...
 
@@ -82,7 +82,7 @@ class base_thread(threading.Thread):
 
 例子:
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -106,7 +106,7 @@ print r.id
 
 s = Square(20, 2, 4)
 print s.id
-{% endhighlight %}
+```
 
 运行结果:
 
@@ -124,7 +124,7 @@ print s.id
 
 简化下代码, 并加一些调试输出:
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -145,7 +145,7 @@ print p.id
 
 r = Rectangle(5, 1, 2)
 print r.id
-{% endhighlight %}
+```
 
 结果是:
 
@@ -171,7 +171,7 @@ print r.id
 
 接着考虑, 解决参数个数不一致的问题? 那么就让参数多一致:
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -203,7 +203,7 @@ print r.id
 
 s = Square(20, 2, 4)
 print s.id
-{% endhighlight %}
+```
 
 运行报错:
 
