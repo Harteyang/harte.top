@@ -1,6 +1,6 @@
 name: "Harte"
 description: "Harte&HR的小伙伴们."
-url: "https://harteyang.github.io/"
+url: "https://harte.top"
 markdown: redcarpet
 highlighter: pygments
 exclude: ["fabfile.py*", "*.bak"]
