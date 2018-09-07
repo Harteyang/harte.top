@@ -7,7 +7,7 @@ title: "Harte&小伙伴"
 <div id="home">
   <span class="index_recent">最近文章：</span>
   <ul class="posts">
-    {% for post in site.posts limit:50 %}
+    {% for post in site.posts limit:30 %}
       {% if post.categories contains "公众号" %}
         {% if post.display %}
       <li><span class="post_date">{{ post.date | date_to_string }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
