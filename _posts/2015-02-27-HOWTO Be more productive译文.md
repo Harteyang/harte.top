@@ -6,13 +6,14 @@ categories: 杂记
 ---
 
 互联网之子-Aaron Swartz曾在博客aaronsw.com发布过一篇文章
+<href
 <a href="http://www.aaronsw.com/weblog/productivity" target=“_blank">《HOWTO: Be more productive</a>》(如何变得更加高效)
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=103 src="http://music.163.com/outchain/player?type=1&id=3017325&auto=1&height=430"></iframe>
 
 看完纪录片《互联网之子后》后对Aaron Swartz的钦佩油然而生。所以也决定把这篇不错的文章翻译出来。附：
 <a href="http://harte01.u.qiniudn.com/The%20Internet's%20Own%20Boy.torrent">纪录片《互联网之子后》The Internet's Own Boy高清版下载地址</a>
 
-<center>![Aaron swartz](http://pic.yupoo.com/lamentchina_v/E7dxPFKW/sm24p.jpg)</center>
+![Aaron swartz](http://pic.yupoo.com/lamentchina_v/E7dxPFKW/sm24p.jpg)
 
 “With all the time you spend watching TV,” he tells me, “you could have written a novel by now.” It’s hard to disagree with the sentiment — writing a novel is undoubtedly a better use of time than watching TV — but what about the hidden assumption? Such comments imply that time is “fungible” — that time spent watching TV can just as easily be spent writing a novel. And sadly, that’s just not the case.
 
