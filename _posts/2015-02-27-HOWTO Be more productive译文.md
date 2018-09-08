@@ -13,6 +13,7 @@ categories: 杂记
 <a href="http://harte01.u.qiniudn.com/The%20Internet's%20Own%20Boy.torrent">纪录片《互联网之子后》The Internet's Own Boy高清版下载地址</a>
 
 ![Aaron swartz](http://pic.yupoo.com/lamentchina_v/E7dxPFKW/sm24p.jpg)
+
 “With all the time you spend watching TV,” he tells me, “you could have written a novel by now.” It’s hard to disagree with the sentiment — writing a novel is undoubtedly a better use of time than watching TV — but what about the hidden assumption? Such comments imply that time is “fungible” — that time spent watching TV can just as easily be spent writing a novel. And sadly, that’s just not the case.
 
 他告诉我“到现在你花在看电视上的时间可以写用来写一部小说了。”不可否认，写小说比看电视更好的使用时间。但是这里隐藏着一个假设是什么呢？这个假设就是时间是“可替代的”---花时间看电视和写小说同样容易。不幸的是，那不是事实。
