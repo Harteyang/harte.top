@@ -9,8 +9,6 @@ categories: 杂记
 
 <a href="http://www.aaronsw.com/weblog/productivity">《HOWTO: Be more productive</a>》(如何变得更加高效)
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=103 src="http://music.163.com/outchain/player?type=1&id=3017325&auto=1&height=430"></iframe>
-
 看完纪录片《互联网之子后》后对Aaron Swartz的钦佩油然而生。所以也决定把这篇不错的文章翻译出来。附：
 <a href="http://harte01.u.qiniudn.com/The%20Internet's%20Own%20Boy.torrent">纪录片《互联网之子后》The Internet's Own Boy高清版下载地址</a>
 
