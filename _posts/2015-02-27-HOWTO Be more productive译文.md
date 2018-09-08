@@ -6,8 +6,9 @@ categories: 杂记
 ---
 
 互联网之子-Aaron Swartz曾在博客aaronsw.com发布过一篇文章
-<href
-<a href="http://www.aaronsw.com/weblog/productivity" target=“blank">《HOWTO: Be more productive</a>》(如何变得更加高效)
+
+<a href="http://www.aaronsw.com/weblog/productivity" target="blank">《HOWTO: Be more productive</a>》(如何变得更加高效)
+
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=103 src="http://music.163.com/outchain/player?type=1&id=3017325&auto=1&height=430"></iframe>
 
 看完纪录片《互联网之子后》后对Aaron Swartz的钦佩油然而生。所以也决定把这篇不错的文章翻译出来。附：
