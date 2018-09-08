@@ -1,4 +1,4 @@
-﻿---
+---
 date: 2015-02-27 14:21
 status: public
 title: 'HOWTO Be more productive译文'
