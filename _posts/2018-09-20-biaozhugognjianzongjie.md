@@ -30,6 +30,7 @@ categories: 招聘
   2. leader杨强已经在使用的网络渠道：智联招聘、BOSS直聘、香草招聘。
   3. 未开通但我认为有帮助的渠道有：应届生网站、当地人才网、人才市场。
 以上渠道各有优势，对比如下表：
+
 ![](https://raw.githubusercontent.com/Harteyang/harte.top/master/_posts/image/2018-09-20-2.png)
 
 **五、	渠道数据情况**
