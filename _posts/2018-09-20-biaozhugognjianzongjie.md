@@ -17,6 +17,7 @@ categories: 招聘
 3. 除了第三方合作渠道--实习僧以外，无现成渠道，需要新开辟渠道；
 三、	目标分解
 根据招聘漏斗分析法，如果要达到不低于22人入职，需有30人Offer，至少保证50左右电话面试通过，HR现场面试可根据候选人数量来灵活调配offer人数。结合时间节点情况如下:
+
 ![](https://raw.githubusercontent.com/Harteyang/harte.top/master/_posts/image/2018-09-20-1.png)
 
 四、	渠道分析
