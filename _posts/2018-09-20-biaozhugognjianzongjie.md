@@ -6,6 +6,7 @@ title: 数据标注攻坚招聘总结（文静）
 categories: 招聘
 ---
 
+如果没有图片请点击[下载PDF](https://github.com/Harteyang/harte.top/raw/master/_posts/image/%E6%95%B0%E6%8D%AE%E6%A0%87%E6%B3%A8%E6%94%BB%E5%9D%9A%E6%8B%9B%E8%81%98%E6%80%BB%E7%BB%93%EF%BC%88%E6%96%87%E9%9D%99%EF%BC%89.pdf)
 
 **一、	项目背景**
 
